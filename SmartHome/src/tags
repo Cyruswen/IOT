@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+StartUp	http.c	/^static int StartUp(int port){$/;"	f	file:
+Usage	tcp.c	/^void Usage()$/;"	f
+blank_line	http.c	/^const char* blank_line = "\\r\\n";$/;"	v
+clear_header	http.c	/^void clear_header(int sock){$/;"	f
+echo_error	http.c	/^void echo_error(int sock, int status_code)$/;"	f
+echo_www	http.c	/^int echo_www(int sock, const char* path, int size)$/;"	f
+exe_cgi	http.c	/^int exe_cgi(int sock, char path[], char method[], char* cur_url){$/;"	f
+get_line	http.c	/^int get_line(int sock, char* buf, int size){$/;"	f
+handle_client	http.c	/^static void* handle_client(void* arg){$/;"	f	file:
+main	http.c	/^int main(int argc, char* argv[]){$/;"	f
+main	tcp.c	/^int main(int argc,char* argv[])$/;"	f
+status_line	http.c	/^const char* status_line =  "HTTP\/1.0 200 OK\\r\\n";$/;"	v
+status_response	http.c	/^void status_response(int sock, int status_code)$/;"	f
+usage	http.c	/^void usage(){$/;"	f
