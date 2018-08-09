@@ -1,9 +1,12 @@
 ROOT=$(shell pwd)
 
 .PHONY:all
-all:httpd cgi
+all:httpd cgi tcpd
+
 httpd:src/http.c
 	gcc -I lib/include $^ -o bin/$@ -lpthread
+tcpd:src/tcp.cpp
+	g++ -I lib/include $^ -o bin/$@ -lpthread
 cgi:
 	cd $(ROOT)/webRoot/cgi;make clean;make;cd -
 

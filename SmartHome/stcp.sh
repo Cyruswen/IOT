@@ -1,9 +1,9 @@
 #!/bin/bash
 root=$(pwd)
-bin=bin/httpd
+tbin=bin/tcpd
 
 if [ -z $LD_LIBRARY_PATH ];then
     export LD_LIBRARY_PATH=$root/lib/lib
 fi
 
-./$bin 8080
+./$tbin 9999

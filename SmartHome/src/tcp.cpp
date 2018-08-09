@@ -1,30 +1,4 @@
-#include <stdio.h>
-#include <iostream>
-#include <ctype.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <pthread.h>
-#include <sys/wait.h>
-#include <vector>
-
-
-#define MAXSIZE 1024
-
-typedef struct sockid{
-    int id;
-    int client_fd;
-} sockid;
-
-typedef struct Arg{
-    int fd;
-    struct sockaddr_in addr;
-    std::vector<sockid> Mq;
-} Arg;
-
+#include "tcp.h"
 
 void Usage()
 {
@@ -36,7 +10,7 @@ void Usage()
 
 int getline(int client_fd, char* buf, char* source, char* id,  char* directive)
 {
-    ssize_t read_size = read(client_fd, buf, sizeof buf);
+    ssize_t read_size = read(client_fd, buf, MAXSIZE);
     if(read_size == 0)
     {
         close(client_fd);
@@ -93,6 +67,23 @@ int findSockId(int id, std::vector<sockid> mq)
     return mq[i].client_fd;
 }
 
+#if 0
+void printMq(std::vector<sockid> mq)
+{
+    int i = 0;
+    if(mq.size() == 0)
+    {
+        printf("no mcu_client\n");
+        return;
+    }
+    for(; i < mq.size(); i++)
+    {
+        printf("mcufd:%d mcuid:%d\n", mq[i].client_fd, mq[i].id);
+    }
+    return;
+}
+#endif
+
 void ProcessRequest(int client_fd, std::vector<sockid> mq){
     //tcp ok
     char source[MAXSIZE/4] = {0};
@@ -100,6 +91,9 @@ void ProcessRequest(int client_fd, std::vector<sockid> mq){
     char buf[MAXSIZE] = {0};
     char id[MAXSIZE/4] = {0};
     getline(client_fd, buf, source, id,  directive);
+   // printf("source:%s\n", source);
+   // printf("directive:%s\n", directive);
+   // printf("id:%s\n", id);
     if(strcasecmp(source, "mcu") == 0)
     {
         //如果是mcu，
@@ -122,10 +116,11 @@ void ProcessRequest(int client_fd, std::vector<sockid> mq){
         int mcu_fd = findSockId(atoi(id), mq);
         send(mcu_fd, directive, sizeof(directive), 0);
     }
+   // printMq(mq);
 }
 
 
-void* CreateWorker(void* ptr )
+void* CreateWorker(void* ptr)
 {
     Arg* arg = (Arg*)ptr;
     ProcessRequest(arg->fd, arg->Mq);
@@ -140,6 +135,7 @@ int main(int argc,char* argv[])
         Usage();
         return -1;
     }
+    int opt = 1;
     std::vector<sockid> mq;
     struct sockaddr_in addr;
     addr.sin_family = AF_INET;
@@ -152,6 +148,7 @@ int main(int argc,char* argv[])
         perror("socket");
         return -2;
     }
+    setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
     //绑定套接字
     int ret = bind(fd, (struct sockaddr*)&addr, sizeof(addr));
     if(ret < 0)
