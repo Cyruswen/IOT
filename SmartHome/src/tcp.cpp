@@ -10,7 +10,23 @@ void Usage()
 
 int getline(int client_fd, char* buf, char* source, char* id,  char* directive)
 {
+    size_t n = 0;
+    size_t count = 0;
     ssize_t read_size = read(client_fd, buf, MAXSIZE);
+    for(; n < read_size; n++)
+    {
+        if(isspace(buf[n]))
+        {
+            count++;
+        }
+    }
+    if(count != 2)
+    {
+        char res[] = "format errors";
+        write(client_fd, res, 14);
+        close(client_fd);
+        return -1;
+    }
     if(read_size == 0)
     {
         close(client_fd);
@@ -18,7 +34,7 @@ int getline(int client_fd, char* buf, char* source, char* id,  char* directive)
     }
     size_t i = 0;
     size_t j = 0;
-    while(!isspace(buf[i]))
+    while(!isspace(buf[i]) && i < read_size)
     {
         source[j++] = buf[i++];
     }
@@ -30,7 +46,7 @@ int getline(int client_fd, char* buf, char* source, char* id,  char* directive)
         i++;
     }
     j = 0;
-    while(!isspace(buf[i]))
+    while(!isspace(buf[i]) && i < read_size)
     {
         directive[j++] = buf[i++];
     }
@@ -90,7 +106,12 @@ void ProcessRequest(int client_fd, std::vector<sockid> mq){
     char directive[MAXSIZE/4] = {0};
     char buf[MAXSIZE] = {0};
     char id[MAXSIZE/4] = {0};
-    getline(client_fd, buf, source, id,  directive);
+    int ret = getline(client_fd, buf, source, id,  directive);
+    if(ret == -1)
+    {
+        printf("报文格式错误，已断开连接\n");
+        return;
+    }
    // printf("source:%s\n", source);
    // printf("directive:%s\n", directive);
    // printf("id:%s\n", id);
@@ -115,6 +136,12 @@ void ProcessRequest(int client_fd, std::vector<sockid> mq){
         send(client_fd, respond, sizeof(respond), 0);
         int mcu_fd = findSockId(atoi(id), mq);
         send(mcu_fd, directive, sizeof(directive), 0);
+    }
+    else
+    {
+        char res[] = "source errors";
+        write(client_fd, res, 14);
+        close(client_fd);
     }
    // printMq(mq);
 }
