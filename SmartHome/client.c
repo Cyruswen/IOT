@@ -31,10 +31,9 @@ int main(int argc, char *argv[]){
     }
     
     ssize_t s = 0;
-    char buf[] = "mcu connect 12";
+    char buf[] = "mcui connect 2";
     write(sock, buf, sizeof buf);
-    s = read(sock, buf, sizeof(buf)-1);
-    buf[s] = '\0';
+    s = read(sock, buf, 15);
     printf("buf:%s\n", buf);
     close(sock);
     return 0;
