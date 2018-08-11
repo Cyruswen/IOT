@@ -31,7 +31,7 @@ int main(int argc, char *argv[]){
     }
     
     ssize_t s = 0;
-    char buf[] = "mcui connect 2";
+    char buf[] = "mcxjkui connect 2";
     write(sock, buf, sizeof buf);
     s = read(sock, buf, 15);
     printf("buf:%s\n", buf);
