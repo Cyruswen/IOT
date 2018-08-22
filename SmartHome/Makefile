@@ -13,4 +13,5 @@ cgi:
 .PHONY:clean
 clean:
 	rm -rf bin/httpd core.*
+	rm -rf bin/tcpd
 	cd $(ROOT)/webRoot/cgi;make clean;cd -

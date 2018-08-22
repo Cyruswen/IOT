@@ -5,11 +5,11 @@ LIB_NAME=-lmysqlclient -lpthread
 LD_FLAG=#-static
 
 .PHONY:all
-all:insertData
+all:tcp_client
 
-insertData:insertData.c
-	gcc -o $@ $^ $(INCLUDE) $(LIB) $(LIB_NAME) $(LD_FLAG)
+insertData:tcp_client.cpp
+	g++ -o $@ $^ $(INCLUDE) $(LIB) $(LIB_NAME) $(LD_FLAG)
 
 .PHONY:clean
 clean:
-	rm -f insertData
+	rm -rf tcp_client
