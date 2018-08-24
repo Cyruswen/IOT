@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <iostream>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -7,16 +8,15 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <string>
+using namespace std;
 
-#define SERVER_IP "127.0.0.1"
+#define SERVER_IP "192.168.1.104"
 #define SERVER_PORT 9999
 #define BUF_SIZE 1024
 
 
 int client(char* arg)
 {
-    printf("<html>");
-    printf("<meta charset=utf-8>");
     struct sockaddr_in addr;
     addr.sin_family = AF_INET;
     if(inet_aton(SERVER_IP, &addr.sin_addr) == 0)
@@ -43,21 +43,20 @@ int client(char* arg)
     // 解析 arg 里面的请求数据
          // 然后发给 tcp 服务器 
     char buf[BUF_SIZE] = {0};
-    std::string button;
-    std::string number;
-    // button=open&id=1
-    strtok(arg, "=&");
-    button = strtok(NULL, "=&");
-    strtok(NULL, "=&");
-    number = strtok(NULL, "=&");
+    std::string ver;
+    std::string pin;
+    //QUERY_STRING=app=ON1 
+    strtok(arg, "=");
+    ver = strtok(NULL, "=");
+    pin = strtok(NULL, "=");
 
-    std::string msg("app");
+    std::string msg("");
+    msg += ver;
     msg += " ";
-    msg += button;
+    msg += "1";  //这里假装有调试用
     msg += " ";
-    msg += number;
-    // msg = "app open 1"
-
+    msg += pin;
+    // msg = "app 1 ON1"
     // 发送
     if(write(fd, msg.c_str(), msg.size()) == -1)
     {
@@ -78,8 +77,6 @@ int client(char* arg)
     buf[read_size] = '\0';
     // 收到 tcp服务器的回应, 根据回应判断是否控制成功
     // 再将结果返回给 app 客户端
-    printf("<h2>%s</h2>h2>", buf);
-    printf("html>");
     return 0;
 }
 

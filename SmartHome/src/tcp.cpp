@@ -1,4 +1,7 @@
 #include "tcp.h"
+#include <stdio.h>
+
+std::vector<sockid> Mq;
 
 void Usage()
 {
@@ -8,11 +11,13 @@ void Usage()
 //http发来的报文：app id close/open
 //mcu发来的报文： mcu id connect
 
-int getline(int client_fd, char* buf, char* source, char* id,  char* directive)
+int getline(int client_fd, char* buf, char* source, char* id, char* directive)
 {
     size_t n = 0;
     size_t count = 0;
     ssize_t read_size = read(client_fd, buf, MAXSIZE);
+    printf("read_size:%d\n", read_size);
+    printf("%s\n", buf);
     for(; n < read_size; n++)
     {
         if(isspace(buf[n]))
@@ -66,21 +71,21 @@ int getline(int client_fd, char* buf, char* source, char* id,  char* directive)
     return 1;
 }
 
-int findSockId(int id, std::vector<sockid> mq)
+int findSockId(int id)
 {
     size_t i = 0;
-    for(; i < mq.size(); i++)
+    for(; i < Mq.size(); i++)
     {
-        if(mq[i].id == id)
+        if(Mq[i].id == id)
         {
             break;
         }
     }
-    if(i >= mq.size())
+    if(i >= Mq.size())
     {
         return -1;
     }
-    return mq[i].client_fd;
+    return Mq[i].client_fd;
 }
 
 #if 0
@@ -100,8 +105,16 @@ void printMq(std::vector<sockid> mq)
 }
 #endif
 
-void ProcessRequest(int client_fd, std::vector<sockid> mq){
-    //tcp ok
+//void ProcessRequest(int client_fd){
+//    //tcp ok
+//   
+//}
+
+
+static void* CreateWorker(void* ptr)
+{
+    size_t client_fd = (size_t)ptr;
+    printf("new client_fd: %lu\n", client_fd);
     char source[MAXSIZE/4] = {0};
     char directive[MAXSIZE/4] = {0};
     char buf[MAXSIZE] = {0};
@@ -110,11 +123,11 @@ void ProcessRequest(int client_fd, std::vector<sockid> mq){
     if(ret == -1)
     {
         printf("报文格式错误，已断开连接\n");
-        return;
+        return NULL;
     }
-   // printf("source:%s\n", source);
-   // printf("directive:%s\n", directive);
-   // printf("id:%s\n", id);
+    printf("source:%s\n", source);
+    printf("directive:%s\n", directive);
+    printf("id:%s\n", id);
     if(strcasecmp(source, "mcu") == 0)
     {
         //如果是mcu，
@@ -123,18 +136,24 @@ void ProcessRequest(int client_fd, std::vector<sockid> mq){
         sockid sd;
         sd.client_fd = client_fd;
         sd.id = atoi(id);
-        mq.push_back(sd);
+        Mq.push_back(sd);
         char respond_mcu[] = "tcp ok";
         send(client_fd, respond_mcu, sizeof(respond_mcu), 0);
     }
     else if(strcasecmp(source, "app") == 0)
     {
-        //如果是app,
+        //如果是app,如果mcu没有连接，则返回错误
         //1.需要响应一个接收成功报文
         //2.需要根据id找到mcu的fd
+       // if(Mq.empty())
+       // {
+       //     char respond[] = "no Nodemcu to connect";
+       //     send(client_fd, respond, sizeof(respond), 0);
+       //     return NULL;
+       // }
         char respond[] = "tcp ok";
         send(client_fd, respond, sizeof(respond), 0);
-        int mcu_fd = findSockId(atoi(id), mq);
+        int mcu_fd = findSockId(atoi(id));
         send(mcu_fd, directive, sizeof(directive), 0);
     }
     else
@@ -144,14 +163,6 @@ void ProcessRequest(int client_fd, std::vector<sockid> mq){
         close(client_fd);
     }
    // printMq(mq);
-}
-
-
-void* CreateWorker(void* ptr)
-{
-    Arg* arg = (Arg*)ptr;
-    ProcessRequest(arg->fd, arg->Mq);
-    free(arg);
     return NULL;
 }
 
@@ -195,18 +206,16 @@ int main(int argc,char* argv[])
     {
         struct sockaddr_in client_addr;
         socklen_t len = sizeof(client_addr);
-        int client_fd = accept(fd, (struct sockaddr*)&client_fd, &len);
+        size_t client_fd = accept(fd, (struct sockaddr*)&client_fd, &len);
+        printf("get a connect.\n");
+        printf("client_fd: %lu\n", client_fd);
         if(client_fd < 0)
         {
             perror("accept");
             continue;
         }
         pthread_t tid;
-        Arg* arg = (Arg*)malloc(sizeof(Arg));
-        arg->fd = client_fd;
-        arg->addr = client_addr;
-        arg->Mq = mq;
-        pthread_create(&tid, NULL, CreateWorker, (void*)arg);
+        pthread_create(&tid, NULL, CreateWorker, (void*)client_fd);
         pthread_detach(tid);
     }
     return 0;

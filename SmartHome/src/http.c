@@ -161,6 +161,7 @@ int exe_cgi(int sock, char path[], char method[], char* cur_url){
         {
             sprintf(quer_string_env, "QUERY_STRING=%s", cur_url);
             putenv(quer_string_env);
+            printf("QUERY_STRING:%s\n", quer_string_env);
         }
         else
         {
@@ -308,6 +309,7 @@ static void* handle_client(void* arg){
         url[j++] = buf[i++];
     }
     url[j] = '\0';
+    printf("URL: %s\n",url);
     //已经获取到了URL
     //strcasecmp用忽略大小写比较字符串，通过strcasecmp函数可以指定每个
     //字符串用于比较的字符数，strncasecmp用来比较参数s1和s2字符串前n个字符，比较时会自动忽略大小写的差异。
@@ -337,6 +339,7 @@ static void* handle_client(void* arg){
     if(path[strlen(path)-1] == '/'){
         strcat(path,"index.html");
     }
+    printf("path: %s\n", path);
     struct stat st;
    //stat() 通过文件名filename获取文件信息，并保存在buf所指的结构体stat中 
     if(stat(path, &st) < 0){
@@ -391,6 +394,7 @@ int main(int argc, char* argv[]){
             continue;
         }
         //程序走到这里说明有新的连接到来
+        printf("get a new connect\n");
         pthread_t tid = 0;
         //利用子线程对接受到的套接字进行处理
         
