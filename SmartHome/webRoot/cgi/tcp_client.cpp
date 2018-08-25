@@ -10,9 +10,11 @@
 #include <string>
 using namespace std;
 
-#define SERVER_IP "192.168.1.104"
+#define SERVER_IP "192.168.43.24"
 #define SERVER_PORT 9999
 #define BUF_SIZE 1024
+
+
 
 
 int client(char* arg)
@@ -45,9 +47,8 @@ int client(char* arg)
     char buf[BUF_SIZE] = {0};
     std::string ver;
     std::string pin;
-    //QUERY_STRING=app=ON1 
-    strtok(arg, "=");
-    ver = strtok(NULL, "=");
+    //app=ON1 
+    ver = strtok(arg, "=");
     pin = strtok(NULL, "=");
 
     std::string msg("");
@@ -82,6 +83,7 @@ int client(char* arg)
 
 int main()
 {
+    FILE *fp = fopen("/tmp/client.log", "a");
     char* method = NULL;
     char* query_string = NULL;
     char* arg = NULL;
@@ -90,11 +92,15 @@ int main()
     if(getenv("METHOD") != NULL)
     {
         method = getenv("METHOD");
+        fprintf(fp, "METHOD: %s\n", method);
+        fflush(fp);
         if(strcasecmp(method, "GET") == 0)
         {
             if(getenv("QUERY_STRING") != NULL)
             {
                 query_string = getenv("QUERY_STRING");
+                fprintf(fp, "query_string: %s\n", query_string);
+                fflush(fp);
                 arg = query_string;
             }
         }
@@ -118,4 +124,5 @@ int main()
         // 由client解析请求数据, 根据app的请求, 再向 tcp 服务器发送请求, 控制终端
         client(arg);
     }
+    fclose(fp);
 }

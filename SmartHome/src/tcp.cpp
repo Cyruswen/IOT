@@ -15,9 +15,9 @@ int getline(int client_fd, char* buf, char* source, char* id, char* directive)
 {
     size_t n = 0;
     size_t count = 0;
-    ssize_t read_size = read(client_fd, buf, MAXSIZE);
+    int read_size = read(client_fd, buf, 1024);
     printf("read_size:%d\n", read_size);
-    printf("%s\n", buf);
+    printf("request from cgi:%s\n", buf);
     for(; n < read_size; n++)
     {
         if(isspace(buf[n]))
@@ -53,9 +53,9 @@ int getline(int client_fd, char* buf, char* source, char* id, char* directive)
     j = 0;
     while(!isspace(buf[i]) && i < read_size)
     {
-        directive[j++] = buf[i++];
+        id[j++] = buf[i++];
     }
-    directive[j] = '\0';
+    id[j] = '\0';
     //走到这儿读到命令
     while(isspace(buf[i]))
     {
@@ -64,9 +64,9 @@ int getline(int client_fd, char* buf, char* source, char* id, char* directive)
     j = 0;
     while(buf[i] != '\0')
     {
-        id[j++] = buf[i++];
+        directive[j++] = buf[i++];
     }
-    id[j] = '\0';
+    directive[j] = '\0';
     //读到id
     return 1;
 }
@@ -214,6 +214,10 @@ int main(int argc,char* argv[])
             perror("accept");
             continue;
         }
+        //char buf[1024] = {0};
+        //int ret = read(client_fd, buf, 1024);
+        //printf("%d\n", ret);
+        //printf("%s\n", buf);
         pthread_t tid;
         pthread_create(&tid, NULL, CreateWorker, (void*)client_fd);
         pthread_detach(tid);

@@ -174,7 +174,7 @@ int exe_cgi(int sock, char path[], char method[], char* cur_url){
         {
             perror("dup2");
             return 404;
-        }
+        }   
         int ret = execl(path, path, NULL);
         if(ret == -1)
         {
@@ -204,6 +204,7 @@ int exe_cgi(int sock, char path[], char method[], char* cur_url){
         {
             send(sock, &ch, 1, 0);
         }
+
         if(waitpid(pid, NULL, 0) < 0)
         {
             perror("waitpid");
@@ -395,6 +396,7 @@ int main(int argc, char* argv[]){
         }
         //程序走到这里说明有新的连接到来
         printf("get a new connect\n");
+        printf("client_id:%d\n", client_fd);
         pthread_t tid = 0;
         //利用子线程对接受到的套接字进行处理
         

@@ -7,8 +7,8 @@ LD_FLAG=#-static
 .PHONY:all
 all:tcp_client
 
-insertData:tcp_client.cpp
-	g++ -o $@ $^ $(INCLUDE) $(LIB) $(LIB_NAME) $(LD_FLAG)
+tcp_client:tcp_client.cpp
+	g++ -g -o $@ $^ $(INCLUDE) $(LIB) $(LIB_NAME) $(LD_FLAG)
 
 .PHONY:clean
 clean:
