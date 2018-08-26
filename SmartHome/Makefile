@@ -6,7 +6,7 @@ all:httpd cgi tcpd
 httpd:src/http.c
 	gcc -I lib/include $^ -o bin/$@ -lpthread
 tcpd:src/tcp.cpp
-	g++ -I lib/include $^ -o bin/$@ -lpthread
+	g++ -g -I lib/include $^ -o bin/$@ -lpthread
 cgi:
 	cd $(ROOT)/webRoot/cgi;make clean;make;cd -
 

@@ -54,7 +54,7 @@ int client(char* arg)
     std::string msg("");
     msg += ver;
     msg += " ";
-    msg += "1";  //这里假装有调试用
+    msg += "1001";  //这里假装有调试用
     msg += " ";
     msg += pin;
     // msg = "app 1 ON1"
@@ -78,6 +78,7 @@ int client(char* arg)
     buf[read_size] = '\0';
     // 收到 tcp服务器的回应, 根据回应判断是否控制成功
     // 再将结果返回给 app 客户端
+    write(1, buf, sizeof(buf));
     return 0;
 }
 

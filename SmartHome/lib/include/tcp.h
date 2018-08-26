@@ -17,6 +17,7 @@
 typedef struct sockid{
     int id;
     int client_fd;
+//    char* mcu_status;
 } sockid;
 
 //typedef struct Arg{
@@ -27,7 +28,7 @@ typedef struct sockid{
 
 int getline(int client_fd, char* buf, char* source, char* id,  char* directive);
 
-int findSockId(int id, std::vector<sockid> mq);
+int findSockId(int id, char* mcu_status);
 
 void ProcessRequest(int client_fd, std::vector<sockid> mq);
 

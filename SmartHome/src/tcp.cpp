@@ -56,7 +56,7 @@ int getline(int client_fd, char* buf, char* source, char* id, char* directive)
         id[j++] = buf[i++];
     }
     id[j] = '\0';
-    //走到这儿读到命令
+    //读到id
     while(isspace(buf[i]))
     {
         i++;
@@ -67,7 +67,7 @@ int getline(int client_fd, char* buf, char* source, char* id, char* directive)
         directive[j++] = buf[i++];
     }
     directive[j] = '\0';
-    //读到id
+    //走到这儿读到命令
     return 1;
 }
 
@@ -110,6 +110,19 @@ void printMq(std::vector<sockid> mq)
 //   
 //}
 
+//void setStatus(int id, char* mcu_status)
+//{
+//    size_t i = 0;
+//    for(; i < Mq.size(); i++)
+//    {
+//        if(Mq[i].id == id)
+//        {
+//            strcpy(Mq[i].mcu_status, mcu_status);
+//            break;
+//        }
+//    }
+//    return;
+//}
 
 static void* CreateWorker(void* ptr)
 {
@@ -132,13 +145,12 @@ static void* CreateWorker(void* ptr)
     {
         //如果是mcu，
         //1.需要将它维护起来
-        //2.发送一个响应让其亮一下
+        //维护的内容有该nodemcu的client_fd
+        //id以及当前状态，open表示当前状态是开，close表示当前状态是关
         sockid sd;
         sd.client_fd = client_fd;
         sd.id = atoi(id);
         Mq.push_back(sd);
-        char respond_mcu[] = "tcp ok";
-        send(client_fd, respond_mcu, sizeof(respond_mcu), 0);
     }
     else if(strcasecmp(source, "app") == 0)
     {
@@ -151,10 +163,19 @@ static void* CreateWorker(void* ptr)
        //     send(client_fd, respond, sizeof(respond), 0);
        //     return NULL;
        // }
-        char respond[] = "tcp ok";
-        send(client_fd, respond, sizeof(respond), 0);
+        //char mcu_status[10] = {0};
         int mcu_fd = findSockId(atoi(id));
+        if(mcu_fd == -1)
+        {
+            printf("there is no such id\n");
+            return NULL;
+        }
+       // send(client_fd, mcu_status, sizeof(mcu_status), 0);
+         //printf("can reach send dir to mcu\n");
         send(mcu_fd, directive, sizeof(directive), 0);
+        //更新维护表中mcu的状态
+        //getline(mcu_fd, buf, source, id,  directive);
+        //setStatus(atoi(id), directive);
     }
     else
     {
@@ -174,7 +195,13 @@ int main(int argc,char* argv[])
         return -1;
     }
     int opt = 1;
-    std::vector<sockid> mq;
+#if 0
+    sockid s;
+    s.id = 1001;
+    s.client_fd = 2;
+    Mq.push_back(s);
+#endif
+
     struct sockaddr_in addr;
     addr.sin_family = AF_INET;
     addr.sin_port = htons(atoi(argv[1]));
