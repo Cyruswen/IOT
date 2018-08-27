@@ -11,6 +11,8 @@
 #include <pthread.h>
 #include <sys/wait.h>
 #include <vector>
+#include <mutex>
+#include <stdio.h>
 #define MAXSIZE 1024
 
 

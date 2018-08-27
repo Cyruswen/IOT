@@ -1,7 +1,7 @@
 #include "tcp.h"
-#include <stdio.h>
 
 std::vector<sockid> Mq;
+std::mutex g_io_mutex;
 
 void Usage()
 {
@@ -105,10 +105,6 @@ void printMq(std::vector<sockid> mq)
 }
 #endif
 
-//void ProcessRequest(int client_fd){
-//    //tcp ok
-//   
-//}
 
 //void setStatus(int id, char* mcu_status)
 //{
@@ -146,33 +142,30 @@ static void* CreateWorker(void* ptr)
         //如果是mcu，
         //1.需要将它维护起来
         //维护的内容有该nodemcu的client_fd
-        //id以及当前状态，open表示当前状态是开，close表示当前状态是关
+        g_io_mutex.lock();
         sockid sd;
         sd.client_fd = client_fd;
         sd.id = atoi(id);
         Mq.push_back(sd);
+        g_io_mutex.unlock();
     }
     else if(strcasecmp(source, "app") == 0)
     {
         //如果是app,如果mcu没有连接，则返回错误
         //1.需要响应一个接收成功报文
         //2.需要根据id找到mcu的fd
-       // if(Mq.empty())
-       // {
-       //     char respond[] = "no Nodemcu to connect";
-       //     send(client_fd, respond, sizeof(respond), 0);
-       //     return NULL;
-       // }
-        //char mcu_status[10] = {0};
+        char buf[1024] = {0};
+        g_io_mutex.lock();
         int mcu_fd = findSockId(atoi(id));
+        g_io_mutex.unlock();
         if(mcu_fd == -1)
         {
             printf("there is no such id\n");
             return NULL;
         }
-       // send(client_fd, mcu_status, sizeof(mcu_status), 0);
-         //printf("can reach send dir to mcu\n");
         send(mcu_fd, directive, sizeof(directive), 0);
+        read(mcu_fd, buf, sizeof(buf));
+        printf("buf:%s\n", buf);
         //更新维护表中mcu的状态
         //getline(mcu_fd, buf, source, id,  directive);
         //setStatus(atoi(id), directive);
