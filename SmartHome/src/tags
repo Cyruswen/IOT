@@ -4,8 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-CreateWorker	tcp.cpp	/^void* CreateWorker(void* ptr)$/;"	f
-ProcessRequest	tcp.cpp	/^void ProcessRequest(int client_fd, std::vector<sockid> mq){$/;"	f
+CreateWorker	tcp.cpp	/^static void* CreateWorker(void* ptr)$/;"	f	file:
+Mq	tcp.cpp	/^std::vector<sockid> Mq;$/;"	v
 StartUp	http.c	/^static int StartUp(int port){$/;"	f	file:
 Usage	tcp.cpp	/^void Usage()$/;"	f
 blank_line	http.c	/^const char* blank_line = "\\r\\n";$/;"	v
@@ -13,9 +13,10 @@ clear_header	http.c	/^void clear_header(int sock){$/;"	f
 echo_error	http.c	/^void echo_error(int sock, int status_code)$/;"	f
 echo_www	http.c	/^int echo_www(int sock, const char* path, int size)$/;"	f
 exe_cgi	http.c	/^int exe_cgi(int sock, char path[], char method[], char* cur_url){$/;"	f
-findSockId	tcp.cpp	/^int findSockId(int id, std::vector<sockid> mq)$/;"	f
+findSockId	tcp.cpp	/^int findSockId(int id)$/;"	f
+g_io_mutex	tcp.cpp	/^std::mutex g_io_mutex;$/;"	v
 get_line	http.c	/^int get_line(int sock, char* buf, int size){$/;"	f
-getline	tcp.cpp	/^int getline(int client_fd, char* buf, char* source, char* id,  char* directive)$/;"	f
+getline	tcp.cpp	/^int getline(int client_fd, char* buf, char* source, char* id, char* directive)$/;"	f
 handle_client	http.c	/^static void* handle_client(void* arg){$/;"	f	file:
 main	http.c	/^int main(int argc, char* argv[]){$/;"	f
 main	tcp.cpp	/^int main(int argc,char* argv[])$/;"	f

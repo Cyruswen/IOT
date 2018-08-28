@@ -210,6 +210,7 @@ int exe_cgi(int sock, char path[], char method[], char* cur_url){
             perror("waitpid");
             return 404;
         }
+        close(sock);
         close(input[1]);
         close(output[0]);
     }

@@ -154,7 +154,7 @@ static void* CreateWorker(void* ptr)
         //如果是app,如果mcu没有连接，则返回错误
         //1.需要响应一个接收成功报文
         //2.需要根据id找到mcu的fd
-        char buf[1024] = {0};
+        //char buf[1024] = {0};
         g_io_mutex.lock();
         int mcu_fd = findSockId(atoi(id));
         g_io_mutex.unlock();
@@ -164,11 +164,12 @@ static void* CreateWorker(void* ptr)
             return NULL;
         }
         send(mcu_fd, directive, sizeof(directive), 0);
-        read(mcu_fd, buf, sizeof(buf));
-        printf("buf:%s\n", buf);
+        //read(mcu_fd, buf, sizeof(buf));
+        //printf("buf:%s\n", buf);
         //更新维护表中mcu的状态
         //getline(mcu_fd, buf, source, id,  directive);
         //setStatus(atoi(id), directive);
+        close(client_fd); 
     }
     else
     {
