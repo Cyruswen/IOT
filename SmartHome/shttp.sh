@@ -6,4 +6,4 @@ if [ -z $LD_LIBRARY_PATH ];then
     export LD_LIBRARY_PATH=$root/lib/lib
 fi
 
-./$hbin 8080
+strace -f -tt -T -o httpout ./$hbin 8080

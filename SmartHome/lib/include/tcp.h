@@ -10,6 +10,7 @@
 #include <arpa/inet.h>
 #include <pthread.h>
 #include <sys/wait.h>
+#include <string>
 #include <vector>
 #include <mutex>
 #include <stdio.h>

@@ -131,6 +131,8 @@ int exe_cgi(int sock, char path[], char method[], char* cur_url){
     send(sock, line, strlen(line), 0);
     sprintf(line, "Content-Type: text/html\r\n");  
     send(sock, line, strlen(line), 0);
+    //sprintf(line, "Connection: close\r\n");
+    //send(sock, line, strlen(line), 0);
     sprintf(line, "\r\n");
     send(sock, line, strlen(line), 0);
     
@@ -200,19 +202,21 @@ int exe_cgi(int sock, char path[], char method[], char* cur_url){
         }
         //走到GET
         ch = '\0';
+        
         while(read(output[0], &ch, 1))
         {
-            send(sock, &ch, 1, 0);
+            printf("%c", ch);
         }
-
+        printf("\n");
+        
+        close(sock);sock = -1;
+        close(input[1]);
+        close(output[0]);
         if(waitpid(pid, NULL, 0) < 0)
         {
             perror("waitpid");
             return 404;
         }
-        close(sock);
-        close(input[1]);
-        close(output[0]);
     }
     return 200;
 }
@@ -280,7 +284,7 @@ int echo_www(int sock, const char* path, int size)
 
 
 static void* handle_client(void* arg){
-    int sock = (int)arg;
+    size_t sock = (size_t)arg;
     char buf[MAXSIZE] = {0}; 
     char method[MAXSIZE/32];
     char url[MAXSIZE];
@@ -390,7 +394,7 @@ int main(int argc, char* argv[]){
     while(1){
         struct sockaddr_in client_addr;
         socklen_t len = sizeof(client_addr);
-        int client_fd = accept(listen_socket, (struct sockaddr*)&client_addr, &len);
+        size_t client_fd = accept(listen_socket, (struct sockaddr*)&client_addr, &len);
         if(client_fd < 0){
             printf("no client\n");
             continue;

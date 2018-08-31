@@ -10,7 +10,7 @@
 #include <string>
 using namespace std;
 
-#define SERVER_IP "192.168.43.24"
+#define SERVER_IP "192.168.1.110"
 #define SERVER_PORT 9999
 #define BUF_SIZE 1024
 
@@ -33,18 +33,16 @@ int client(char* arg)
     {
         perror("socket");
         return -1;
-
     }
     if(connect(fd, (struct sockaddr*)&addr, sizeof addr) == -1)
     {
         perror("connect");
         return -1;
-
     }
 
     // 解析 arg 里面的请求数据
          // 然后发给 tcp 服务器 
-    char buf[BUF_SIZE] = {0};
+    char buf[BUF_SIZE/4] = {0};
     std::string ver;
     std::string pin;
     //app=ON1 
@@ -66,19 +64,19 @@ int client(char* arg)
     }
 
     // 接收
-    ssize_t read_size = read(fd, buf, sizeof(buf)-1);
+    ssize_t read_size = read(fd, buf, sizeof(buf));
     if(read_size == -1)
     {
-        perror("read");
+        exit(-1);
     }
     if(read_size == 0)
     {
-        printf("server busy");
+        exit(-1);
     }
-    buf[read_size] = '\0';
     // 收到 tcp服务器的回应, 根据回应判断是否控制成功
     // 再将结果返回给 app 客户端
     write(1, buf, sizeof(buf));
+    close(fd);
     return 0;
 }
 

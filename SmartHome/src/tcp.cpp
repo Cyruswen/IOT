@@ -158,6 +158,9 @@ static void* CreateWorker(void* ptr)
         g_io_mutex.lock();
         int mcu_fd = findSockId(atoi(id));
         g_io_mutex.unlock();
+        std::string respond("tcp have received app");
+        write(client_fd, respond.c_str(), respond.size());
+        close(client_fd); 
         if(mcu_fd == -1)
         {
             printf("there is no such id\n");
@@ -169,7 +172,6 @@ static void* CreateWorker(void* ptr)
         //更新维护表中mcu的状态
         //getline(mcu_fd, buf, source, id,  directive);
         //setStatus(atoi(id), directive);
-        close(client_fd); 
     }
     else
     {
