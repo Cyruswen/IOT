@@ -88,7 +88,7 @@ int findSockId(int id)
     return Mq[i].client_fd;
 }
 
-#if 0
+#if 1
 void printMq(std::vector<sockid> mq)
 {
     int i = 0;
@@ -143,11 +143,24 @@ static void* CreateWorker(void* ptr)
         //1.需要将它维护起来
         //维护的内容有该nodemcu的client_fd
         g_io_mutex.lock();
-        sockid sd;
-        sd.client_fd = client_fd;
-        sd.id = atoi(id);
-        Mq.push_back(sd);
+        int i = 0;
+        for(; i < Mq.size(); i++)
+        {
+            if(Mq[i].id == atoi(id))
+            {
+                Mq[i].client_fd = client_fd;
+                break;
+            }
+        }
+        if(i >= Mq.size())
+        { 
+            sockid sd;
+            sd.client_fd = client_fd;
+            sd.id = atoi(id);
+            Mq.push_back(sd); 
+        }
         g_io_mutex.unlock();
+        
     }
     else if(strcasecmp(source, "app") == 0)
     {
@@ -232,6 +245,7 @@ int main(int argc,char* argv[])
         size_t client_fd = accept(fd, (struct sockaddr*)&client_fd, &len);
         printf("get a connect.\n");
         printf("client_fd: %lu\n", client_fd);
+        printMq(Mq);
         if(client_fd < 0)
         {
             perror("accept");

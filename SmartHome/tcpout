@@ -1,383 +1,613 @@
-17431 17:31:02.162589 execve("./bin/tcpd", ["./bin/tcpd", "9999"], [/* 46 vars */]) = 0 <0.000182>
-17431 17:31:02.162987 brk(0)            = 0x24a0000 <0.000008>
-17431 17:31:02.163047 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0b53dc0000 <0.000011>
-17431 17:31:02.163104 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory) <0.000011>
-17431 17:31:02.163165 open("/home/admin/Git/IOT/SmartHome/lib/lib/tls/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000032>
-17431 17:31:02.163233 stat("/home/admin/Git/IOT/SmartHome/lib/lib/tls/x86_64", 0x7fff7aacbfc0) = -1 ENOENT (No such file or directory) <0.000025>
-17431 17:31:02.163313 open("/home/admin/Git/IOT/SmartHome/lib/lib/tls/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
-17431 17:31:02.163353 stat("/home/admin/Git/IOT/SmartHome/lib/lib/tls", 0x7fff7aacbfc0) = -1 ENOENT (No such file or directory) <0.000009>
-17431 17:31:02.163385 open("/home/admin/Git/IOT/SmartHome/lib/lib/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
-17431 17:31:02.163419 stat("/home/admin/Git/IOT/SmartHome/lib/lib/x86_64", 0x7fff7aacbfc0) = -1 ENOENT (No such file or directory) <0.000010>
-17431 17:31:02.163452 open("/home/admin/Git/IOT/SmartHome/lib/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
-17431 17:31:02.163488 stat("/home/admin/Git/IOT/SmartHome/lib/lib", {st_mode=S_IFDIR|0775, st_size=4096, ...}) = 0 <0.000010>
-17431 17:31:02.163526 open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3 <0.000012>
-17431 17:31:02.163561 fstat(3, {st_mode=S_IFREG|0644, st_size=75418, ...}) = 0 <0.000009>
-17431 17:31:02.163596 mmap(NULL, 75418, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0b53dad000 <0.000011>
-17431 17:31:02.163630 close(3)          = 0 <0.000008>
-17431 17:31:02.163674 open("/lib64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3 <0.000060>
-17431 17:31:02.163762 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240l\0\0\0\0\0\0"..., 832) = 832 <0.000009>
-17431 17:31:02.163816 fstat(3, {st_mode=S_IFREG|0755, st_size=142296, ...}) = 0 <0.000008>
-17431 17:31:02.163853 mmap(NULL, 2208864, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0b53984000 <0.000010>
-17431 17:31:02.163882 mprotect(0x7f0b5399a000, 2097152, PROT_NONE) = 0 <0.000014>
-17431 17:31:02.163914 mmap(0x7f0b53b9a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7f0b53b9a000 <0.000015>
-17431 17:31:02.163953 mmap(0x7f0b53b9c000, 13408, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f0b53b9c000 <0.000008>
-17431 17:31:02.163987 close(3)          = 0 <0.000007>
-17431 17:31:02.164024 open("/home/admin/Git/IOT/SmartHome/lib/lib/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
-17431 17:31:02.164062 open("/lib64/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000013>
-17431 17:31:02.164093 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\265\5\0\0\0\0\0"..., 832) = 832 <0.000021>
-17431 17:31:02.164155 fstat(3, {st_mode=S_IFREG|0755, st_size=995840, ...}) = 0 <0.000007>
-17431 17:31:02.164484 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0b53dac000 <0.000017>
-17431 17:31:02.164566 mmap(NULL, 3175456, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0b5367c000 <0.000016>
-17431 17:31:02.164616 mprotect(0x7f0b53765000, 2097152, PROT_NONE) = 0 <0.000029>
-17431 17:31:02.164888 mmap(0x7f0b53965000, 40960, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe9000) = 0x7f0b53965000 <0.000045>
-17431 17:31:02.165074 mmap(0x7f0b5396f000, 82976, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f0b5396f000 <0.000012>
-17431 17:31:02.165127 close(3)          = 0 <0.000008>
-17431 17:31:02.165173 open("/home/admin/Git/IOT/SmartHome/lib/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000024>
-17431 17:31:02.165272 open("/lib64/libm.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000020>
-17431 17:31:02.165333 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260T\0\0\0\0\0\0"..., 832) = 832 <0.000010>
-17431 17:31:02.165369 fstat(3, {st_mode=S_IFREG|0755, st_size=1141552, ...}) = 0 <0.000008>
-17431 17:31:02.165405 mmap(NULL, 3150168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0b5337a000 <0.000014>
-17431 17:31:02.165442 mprotect(0x7f0b5347b000, 2093056, PROT_NONE) = 0 <0.000016>
-17431 17:31:02.165479 mmap(0x7f0b5367a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x100000) = 0x7f0b5367a000 <0.000014>
-17431 17:31:02.165549 close(3)          = 0 <0.000008>
-17431 17:31:02.165589 open("/home/admin/Git/IOT/SmartHome/lib/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
-17431 17:31:02.165633 open("/lib64/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3 <0.000100>
-17431 17:31:02.165775 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360*\0\0\0\0\0\0"..., 832) = 832 <0.000008>
-17431 17:31:02.165846 fstat(3, {st_mode=S_IFREG|0755, st_size=88720, ...}) = 0 <0.000007>
-17431 17:31:02.165891 mmap(NULL, 2184192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0b53164000 <0.000014>
-17431 17:31:02.165925 mprotect(0x7f0b53179000, 2093056, PROT_NONE) = 0 <0.000013>
-17431 17:31:02.165956 mmap(0x7f0b53378000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x14000) = 0x7f0b53378000 <0.000012>
-17431 17:31:02.166000 close(3)          = 0 <0.000007>
-17431 17:31:02.166036 open("/home/admin/Git/IOT/SmartHome/lib/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
-17431 17:31:02.166079 open("/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000012>
-17431 17:31:02.166112 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \34\2\0\0\0\0\0"..., 832) = 832 <0.000008>
-17431 17:31:02.166137 fstat(3, {st_mode=S_IFREG|0755, st_size=2107816, ...}) = 0 <0.000007>
-17431 17:31:02.166164 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0b53dab000 <0.000027>
-17431 17:31:02.166245 mmap(NULL, 3932736, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0b52da3000 <0.000011>
-17431 17:31:02.166291 mprotect(0x7f0b52f59000, 2097152, PROT_NONE) = 0 <0.000016>
-17431 17:31:02.166325 mmap(0x7f0b53159000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b6000) = 0x7f0b53159000 <0.000012>
-17431 17:31:02.166362 mmap(0x7f0b5315f000, 16960, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f0b5315f000 <0.000010>
-17431 17:31:02.166400 close(3)          = 0 <0.000007>
-17431 17:31:02.166452 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0b53daa000 <0.000009>
-17431 17:31:02.166519 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0b53da8000 <0.000008>
-17431 17:31:02.166570 arch_prctl(ARCH_SET_FS, 0x7f0b53da8740) = 0 <0.000009>
-17431 17:31:02.166886 mprotect(0x7f0b53159000, 16384, PROT_READ) = 0 <0.000015>
-17431 17:31:02.166945 mprotect(0x7f0b53378000, 4096, PROT_READ) = 0 <0.000016>
-17431 17:31:02.167008 mprotect(0x7f0b5367a000, 4096, PROT_READ) = 0 <0.000016>
-17431 17:31:02.167493 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0b53da7000 <0.000013>
-17431 17:31:02.167564 mprotect(0x7f0b53965000, 32768, PROT_READ) = 0 <0.000013>
-17431 17:31:02.167616 mprotect(0x7f0b53b9a000, 4096, PROT_READ) = 0 <0.000016>
-17431 17:31:02.167657 mprotect(0x603000, 4096, PROT_READ) = 0 <0.000021>
-17431 17:31:02.167746 mprotect(0x7f0b53dc1000, 4096, PROT_READ) = 0 <0.000018>
-17431 17:31:02.167791 munmap(0x7f0b53dad000, 75418) = 0 <0.000043>
-17431 17:31:02.167861 set_tid_address(0x7f0b53da8a10) = 17431 <0.000008>
-17431 17:31:02.167894 set_robust_list(0x7f0b53da8a20, 24) = 0 <0.000009>
-17431 17:31:02.167927 rt_sigaction(SIGRTMIN, {0x7f0b5398a780, [], SA_RESTORER|SA_SIGINFO, 0x7f0b53993100}, NULL, 8) = 0 <0.000008>
-17431 17:31:02.167973 rt_sigaction(SIGRT_1, {0x7f0b5398a810, [], SA_RESTORER|SA_RESTART|SA_SIGINFO, 0x7f0b53993100}, NULL, 8) = 0 <0.000009>
-17431 17:31:02.168019 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0 <0.000008>
-17431 17:31:02.168067 getrlimit(RLIMIT_STACK, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0 <0.000008>
-17431 17:31:02.168211 futex(0x7f0b5398196c, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000010>
-17431 17:31:02.168291 futex(0x7f0b53981978, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000009>
-17431 17:31:02.168364 socket(PF_INET, SOCK_STREAM, IPPROTO_IP) = 3 <0.000052>
-17431 17:31:02.168446 setsockopt(3, SOL_SOCKET, SO_REUSEADDR, [1], 4) = 0 <0.000010>
-17431 17:31:02.168485 bind(3, {sa_family=AF_INET, sin_port=htons(9999), sin_addr=inet_addr("0.0.0.0")}, 16) = 0 <0.000014>
-17431 17:31:02.168534 listen(3, 10)     = 0 <0.000022>
-17431 17:31:02.168581 accept(3, {sa_family=AF_INET, sin_port=htons(36436), sin_addr=inet_addr("192.168.1.110")}, [16]) = 4 <2.456166>
-17431 17:31:04.624796 fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0 <0.000009>
-17431 17:31:04.624848 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0b53dbf000 <0.000009>
-17431 17:31:04.624881 write(1, "get a connect.\n", 15) = 15 <0.000075>
-17431 17:31:04.624989 write(1, "client_fd: 4\n", 13) = 13 <0.000038>
-17431 17:31:04.625059 mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f0b525a2000 <0.000009>
-17431 17:31:04.625125 brk(0)            = 0x24a0000 <0.000009>
-17431 17:31:04.625169 brk(0x24c1000)    = 0x24c1000 <0.000008>
-17431 17:31:04.625195 brk(0)            = 0x24c1000 <0.000007>
-17431 17:31:04.625228 mprotect(0x7f0b525a2000, 4096, PROT_NONE) = 0 <0.000008>
-17431 17:31:04.625258 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17434 <0.000022>
-17431 17:31:04.625306 accept(3,  <unfinished ...>
-17434 17:31:04.637241 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000008>
-17434 17:31:04.637321 write(1, "new client_fd: 4\n", 17) = 17 <0.000017>
-17434 17:31:04.637366 read(4, "app 1001 ON", 1024) = 11 <0.000011>
-17434 17:31:04.637403 write(1, "read_size:11\n", 13) = 13 <0.000011>
-17434 17:31:04.637434 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000010>
-17434 17:31:04.637465 write(1, "source:app\n", 11) = 11 <0.000010>
-17434 17:31:04.637494 write(1, "directive:ON\n", 13) = 13 <0.000009>
-17434 17:31:04.637523 write(1, "id:1001\n", 8) = 8 <0.000833>
-17434 17:31:04.638446 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f0b4a5a2000 <0.000012>
-17434 17:31:04.638488 munmap(0x7f0b4a5a2000, 27648000) = 0 <0.000015>
-17434 17:31:04.638521 munmap(0x7f0b50000000, 39460864) = 0 <0.000024>
-17434 17:31:04.638583 mprotect(0x7f0b4c000000, 135168, PROT_READ|PROT_WRITE) = 0 <0.000009>
-17434 17:31:04.638643 write(4, "tcp have received app", 21) = 21 <0.000505>
-17434 17:31:04.642609 close(4)          = 0 <0.000047>
-17434 17:31:04.642734 write(1, "there is no such id\n", 20) = 20 <0.000014>
-17434 17:31:04.642830 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000021>
-17434 17:31:04.642869 _exit(0)          = ?
-17434 17:31:04.642903 +++ exited with 0 +++
-17431 17:31:10.884842 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36437), sin_addr=inet_addr("192.168.1.110")}, [16]) = 5 <6.259523>
-17431 17:31:10.884979 write(1, "get a connect.\n", 15) = 15 <0.000125>
-17431 17:31:10.885159 write(1, "client_fd: 5\n", 13) = 13 <0.000078>
-17431 17:31:10.885300 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17437 <0.000079>
-17431 17:31:10.885440 accept(3,  <unfinished ...>
-17437 17:31:10.900067 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000010>
-17437 17:31:10.900140 write(1, "new client_fd: 5\n", 17) = 17 <0.000107>
-17437 17:31:10.900278 read(5, "app 1001 OFF", 1024) = 12 <0.000012>
-17437 17:31:10.900327 write(1, "read_size:12\n", 13) = 13 <0.000041>
-17437 17:31:10.900390 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000037>
-17437 17:31:10.900450 write(1, "source:app\n", 11) = 11 <0.000036>
-17437 17:31:10.900511 write(1, "directive:OFF\n", 14) = 14 <0.000060>
-17437 17:31:10.900599 write(1, "id:1001\n", 8) = 8 <0.000036>
-17437 17:31:10.900663 write(5, "tcp have received app", 21) = 21 <0.000393>
-17437 17:31:10.904538 close(5)          = 0 <0.000051>
-17437 17:31:10.904662 write(1, "there is no such id\n", 20) = 20 <0.000100>
-17437 17:31:10.904823 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000011>
-17437 17:31:10.904868 _exit(0)          = ?
-17437 17:31:10.904895 +++ exited with 0 +++
-17431 17:31:11.894139 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36438), sin_addr=inet_addr("192.168.1.110")}, [16]) = 4 <1.008666>
-17431 17:31:11.894293 write(1, "get a connect.\n", 15) = 15 <0.000016>
-17431 17:31:11.894335 write(1, "client_fd: 4\n", 13) = 13 <0.000008>
-17431 17:31:11.894362 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17440 <0.000021>
-17431 17:31:11.894402 accept(3,  <unfinished ...>
-17440 17:31:11.908895 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000007>
-17440 17:31:11.909003 write(1, "new client_fd: 4\n", 17) = 17 <0.000062>
-17440 17:31:11.909091 read(4, "app 1001 ON", 1024) = 11 <0.000009>
-17440 17:31:11.909120 write(1, "read_size:11\n", 13) = 13 <0.000034>
-17440 17:31:11.909171 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000027>
-17440 17:31:11.909216 write(1, "source:app\n", 11) = 11 <0.000026>
-17440 17:31:11.909260 write(1, "directive:ON\n", 13) = 13 <0.000025>
-17440 17:31:11.909303 write(1, "id:1001\n", 8) = 8 <0.000025>
-17440 17:31:11.909351 write(4, "tcp have received app", 21) = 21 <0.000302>
-17440 17:31:11.913266 close(4)          = 0 <0.000101>
-17440 17:31:11.913474 write(1, "there is no such id\n", 20) = 20 <0.000076>
-17440 17:31:11.913593 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000021>
-17440 17:31:11.913642 _exit(0)          = ?
-17440 17:31:11.913672 +++ exited with 0 +++
-17431 17:31:13.050493 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36439), sin_addr=inet_addr("192.168.1.110")}, [16]) = 5 <1.156082>
-17431 17:31:13.050544 write(1, "get a connect.\n", 15) = 15 <0.000067>
-17431 17:31:13.050631 write(1, "client_fd: 5\n", 13) = 13 <0.000029>
-17431 17:31:13.050682 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17451 <0.000020>
-17431 17:31:13.050720 accept(3,  <unfinished ...>
-17451 17:31:13.064155 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000007>
-17451 17:31:13.064225 write(1, "new client_fd: 5\n", 17) = 17 <0.000019>
-17451 17:31:13.064269 read(5, "app 1001 OFF", 1024) = 12 <0.000011>
-17451 17:31:13.064299 write(1, "read_size:12\n", 13) = 13 <0.000009>
-17451 17:31:13.064478 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000018>
-17451 17:31:13.064653 write(1, "source:app\n", 11) = 11 <0.000014>
-17451 17:31:13.064728 write(1, "directive:OFF\n", 14) = 14 <0.000012>
-17451 17:31:13.064880 write(1, "id:1001\n", 8) = 8 <0.000019>
-17451 17:31:13.064976 write(5, "tcp have received app", 21) = 21 <0.000550>
-17451 17:31:13.068921 close(5)          = 0 <0.000065>
-17451 17:31:13.069054 write(1, "there is no such id\n", 20) = 20 <0.000017>
-17451 17:31:13.069150 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000022>
-17451 17:31:13.069189 _exit(0)          = ?
-17451 17:31:13.069215 +++ exited with 0 +++
-17431 17:31:14.077944 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36440), sin_addr=inet_addr("192.168.1.110")}, [16]) = 4 <1.027216>
-17431 17:31:14.077978 write(1, "get a connect.\n", 15) = 15 <0.000073>
-17431 17:31:14.078103 write(1, "client_fd: 4\n", 13) = 13 <0.000036>
-17431 17:31:14.078167 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17454 <0.000021>
-17431 17:31:14.078208 accept(3,  <unfinished ...>
-17454 17:31:14.091037 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000009>
-17454 17:31:14.091121 write(1, "new client_fd: 4\n", 17) = 17 <0.000077>
-17454 17:31:14.091270 read(4, "app 1001 ON", 1024) = 11 <0.000015>
-17454 17:31:14.091320 write(1, "read_size:11\n", 13) = 13 <0.000088>
-17454 17:31:14.091439 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000100>
-17454 17:31:14.091589 write(1, "source:app\n", 11) = 11 <0.000044>
-17454 17:31:14.091662 write(1, "directive:ON\n", 13) = 13 <0.000027>
-17454 17:31:14.091708 write(1, "id:1001\n", 8) = 8 <0.000027>
-17454 17:31:14.091757 write(4, "tcp have received app", 21) = 21 <0.000484>
-17454 17:31:14.095696 close(4)          = 0 <0.000304>
-17454 17:31:14.096377 write(1, "there is no such id\n", 20) = 20 <0.000212>
-17454 17:31:14.096742 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000019>
-17454 17:31:14.096790 _exit(0)          = ?
-17454 17:31:14.096823 +++ exited with 0 +++
-17431 17:31:15.236987 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36441), sin_addr=inet_addr("192.168.1.110")}, [16]) = 5 <1.158772>
-17431 17:31:15.237022 write(1, "get a connect.\n", 15) = 15 <0.000123>
-17431 17:31:15.237170 write(1, "client_fd: 5\n", 13) = 13 <0.000039>
-17431 17:31:15.237237 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17457 <0.000023>
-17431 17:31:15.237283 accept(3,  <unfinished ...>
-17457 17:31:15.248100 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000008>
-17457 17:31:15.248167 write(1, "new client_fd: 5\n", 17) = 17 <0.000078>
-17457 17:31:15.248274 read(5, "app 1001 OFF", 1024) = 12 <0.000013>
-17457 17:31:15.248310 write(1, "read_size:12\n", 13) = 13 <0.000038>
-17457 17:31:15.248370 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000036>
-17457 17:31:15.248429 write(1, "source:app\n", 11) = 11 <0.000036>
-17457 17:31:15.248505 write(1, "directive:OFF\n", 14) = 14 <0.000042>
-17457 17:31:15.248575 write(1, "id:1001\n", 8) = 8 <0.000036>
-17457 17:31:15.248638 write(5, "tcp have received app", 21) = 21 <0.000400>
-17457 17:31:15.260918 close(5)          = 0 <0.000096>
-17457 17:31:15.261110 write(1, "there is no such id\n", 20) = 20 <0.000015>
-17457 17:31:15.261166 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000012>
-17457 17:31:15.261208 _exit(0)          = ?
-17457 17:31:15.261239 +++ exited with 0 +++
-17431 17:31:16.235093 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36442), sin_addr=inet_addr("192.168.1.110")}, [16]) = 4 <0.997801>
-17431 17:31:16.235124 write(1, "get a connect.\n", 15) = 15 <0.000063>
-17431 17:31:16.235207 write(1, "client_fd: 4\n", 13) = 13 <0.000068>
-17431 17:31:16.235299 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17460 <0.000021>
-17431 17:31:16.235356 accept(3,  <unfinished ...>
-17460 17:31:16.245844 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000015>
-17460 17:31:16.245938 write(1, "new client_fd: 4\n", 17) = 17 <0.005094>
-17460 17:31:16.251197 read(4, "app 1001 ON", 1024) = 11 <0.000026>
-17460 17:31:16.251273 write(1, "read_size:11\n", 13) = 13 <0.000017>
-17460 17:31:16.251311 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000010>
-17460 17:31:16.251341 write(1, "source:app\n", 11) = 11 <0.000009>
-17460 17:31:16.251369 write(1, "directive:ON\n", 13) = 13 <0.000008>
-17460 17:31:16.251397 write(1, "id:1001\n", 8) = 8 <0.000010>
-17460 17:31:16.251440 write(4, "tcp have received app", 21) = 21 <0.000458>
-17460 17:31:16.255394 close(4)          = 0 <0.000050>
-17460 17:31:16.255509 write(1, "there is no such id\n", 20) = 20 <0.000030>
-17460 17:31:16.255664 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000025>
-17460 17:31:16.255715 _exit(0)          = ?
-17460 17:31:16.255744 +++ exited with 0 +++
-17431 17:31:17.271219 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36443), sin_addr=inet_addr("192.168.1.110")}, [16]) = 5 <1.035855>
-17431 17:31:17.271251 write(1, "get a connect.\n", 15) = 15 <0.000051>
-17431 17:31:17.271340 write(1, "client_fd: 5\n", 13) = 13 <0.000033>
-17431 17:31:17.271428 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17463 <0.000019>
-17431 17:31:17.271466 accept(3,  <unfinished ...>
-17463 17:31:17.281936 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000007>
-17463 17:31:17.281996 write(1, "new client_fd: 5\n", 17) = 17 <0.000042>
-17463 17:31:17.282060 read(5, "app 1001 OFF", 1024) = 12 <0.000011>
-17463 17:31:17.282089 write(1, "read_size:12\n", 13) = 13 <0.000028>
-17463 17:31:17.282133 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000026>
-17463 17:31:17.282179 write(1, "source:app\n", 11) = 11 <0.000027>
-17463 17:31:17.282222 write(1, "directive:OFF\n", 14) = 14 <0.000061>
-17463 17:31:17.282320 write(1, "id:1001\n", 8) = 8 <0.000040>
-17463 17:31:17.282386 write(5, "tcp have received app", 21) = 21 <0.000309>
-17463 17:31:17.286270 close(5)          = 0 <0.000050>
-17463 17:31:17.286368 write(1, "there is no such id\n", 20) = 20 <0.000056>
-17463 17:31:17.286446 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000019>
-17463 17:31:17.286494 _exit(0)          = ?
-17463 17:31:17.286521 +++ exited with 0 +++
-17431 17:31:18.461352 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36444), sin_addr=inet_addr("192.168.1.110")}, [16]) = 4 <1.189878>
-17431 17:31:18.461385 write(1, "get a connect.\n", 15) = 15 <0.000105>
-17431 17:31:18.461512 write(1, "client_fd: 4\n", 13) = 13 <0.000011>
-17431 17:31:18.461548 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17466 <0.000046>
-17431 17:31:18.461614 accept(3,  <unfinished ...>
-17466 17:31:18.472042 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000007>
-17466 17:31:18.472102 write(1, "new client_fd: 4\n", 17) = 17 <0.000042>
-17466 17:31:18.472167 read(4, "app 1001 ON", 1024) = 11 <0.000011>
-17466 17:31:18.472197 write(1, "read_size:11\n", 13) = 13 <0.000029>
-17466 17:31:18.472243 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000028>
-17466 17:31:18.472290 write(1, "source:app\n", 11) = 11 <0.000027>
-17466 17:31:18.472335 write(1, "directive:ON\n", 13) = 13 <0.000059>
-17466 17:31:18.472414 write(1, "id:1001\n", 8) = 8 <0.000028>
-17466 17:31:18.472483 write(4, "tcp have received app", 21) = 21 <0.000404>
-17466 17:31:18.476751 close(4)          = 0 <0.000123>
-17466 17:31:18.477045 write(1, "there is no such id\n", 20) = 20 <0.000077>
-17466 17:31:18.477168 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000012>
-17466 17:31:18.477211 _exit(0)          = ?
-17466 17:31:18.477243 +++ exited with 0 +++
-17431 17:31:19.403894 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36445), sin_addr=inet_addr("192.168.1.110")}, [16]) = 5 <0.942271>
-17431 17:31:19.403988 write(1, "get a connect.\n", 15) = 15 <0.000060>
-17431 17:31:19.404071 write(1, "client_fd: 5\n", 13) = 13 <0.000028>
-17431 17:31:19.404120 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17469 <0.000020>
-17431 17:31:19.404163 accept(3,  <unfinished ...>
-17469 17:31:19.414971 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000007>
-17469 17:31:19.415034 write(1, "new client_fd: 5\n", 17) = 17 <0.000044>
-17469 17:31:19.415103 read(5, "app 1001 OFF", 1024) = 12 <0.000011>
-17469 17:31:19.415133 write(1, "read_size:12\n", 13) = 13 <0.000029>
-17469 17:31:19.415180 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000026>
-17469 17:31:19.415225 write(1, "source:app\n", 11) = 11 <0.000026>
-17469 17:31:19.415268 write(1, "directive:OFF\n", 14) = 14 <0.000063>
-17469 17:31:19.415356 write(1, "id:1001\n", 8) = 8 <0.000052>
-17469 17:31:19.415437 write(5, "tcp have received app", 21) = 21 <0.000392>
-17469 17:31:19.419429 close(5)          = 0 <0.000054>
-17469 17:31:19.419557 write(1, "there is no such id\n", 20) = 20 <0.000073>
-17469 17:31:19.419654 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000018>
-17469 17:31:19.419701 _exit(0)          = ?
-17469 17:31:19.419726 +++ exited with 0 +++
-17431 17:31:20.373246 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36446), sin_addr=inet_addr("192.168.1.110")}, [16]) = 4 <0.969073>
-17431 17:31:20.373290 write(1, "get a connect.\n", 15) = 15 <0.000088>
-17431 17:31:20.373408 write(1, "client_fd: 4\n", 13) = 13 <0.000041>
-17431 17:31:20.373479 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17472 <0.000026>
-17431 17:31:20.373533 accept(3,  <unfinished ...>
-17472 17:31:20.384146 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000010>
-17472 17:31:20.384223 write(1, "new client_fd: 4\n", 17) = 17 <0.000086>
-17472 17:31:20.384342 read(4, "app 1001 ON", 1024) = 11 <0.000014>
-17472 17:31:20.384383 write(1, "read_size:11\n", 13) = 13 <0.000042>
-17472 17:31:20.384450 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000039>
-17472 17:31:20.384535 write(1, "source:app\n", 11) = 11 <0.000046>
-17472 17:31:20.384615 write(1, "directive:ON\n", 13) = 13 <0.000038>
-17472 17:31:20.384678 write(1, "id:1001\n", 8) = 8 <0.000037>
-17472 17:31:20.384747 write(4, "tcp have received app", 21) = 21 <0.000436>
-17472 17:31:20.395111 close(4)          = 0 <0.000085>
-17472 17:31:20.395253 write(1, "there is no such id\n", 20) = 20 <0.000040>
-17472 17:31:20.395328 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000029>
-17472 17:31:20.395378 _exit(0)          = ?
-17472 17:31:20.395526 +++ exited with 0 +++
-17431 17:31:21.371157 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36447), sin_addr=inet_addr("192.168.1.110")}, [16]) = 5 <0.997613>
-17431 17:31:21.371238 write(1, "get a connect.\n", 15) = 15 <0.000029>
-17431 17:31:21.371288 write(1, "client_fd: 5\n", 13) = 13 <0.000007>
-17431 17:31:21.371315 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17475 <0.000020>
-17431 17:31:21.371352 accept(3,  <unfinished ...>
-17475 17:31:21.371515 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000005>
-17475 17:31:21.371536 write(1, "new client_fd: 5\n", 17) = 17 <0.000033>
-17475 17:31:21.371586 read(5, "app 1001 OFF", 1024) = 12 <0.000007>
-17475 17:31:21.371610 write(1, "read_size:12\n", 13) = 13 <0.000028>
-17475 17:31:21.371653 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000090>
-17475 17:31:21.371766 write(1, "source:app\n", 11) = 11 <0.000009>
-17475 17:31:21.371815 write(1, "directive:OFF\n", 14) = 14 <0.000008>
-17475 17:31:21.371859 write(1, "id:1001\n", 8) = 8 <0.000008>
-17475 17:31:21.371906 write(5, "tcp have received app", 21) = 21 <0.000212>
-17475 17:31:21.375713 close(5)          = 0 <0.000037>
-17475 17:31:21.375780 write(1, "there is no such id\n", 20) = 20 <0.000040>
-17475 17:31:21.375857 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000009>
-17475 17:31:21.375880 _exit(0)          = ?
-17475 17:31:21.375909 +++ exited with 0 +++
-17431 17:31:22.488268 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36448), sin_addr=inet_addr("192.168.1.110")}, [16]) = 4 <1.116908>
-17431 17:31:22.488304 write(1, "get a connect.\n", 15) = 15 <0.000016>
-17431 17:31:22.488342 write(1, "client_fd: 4\n", 13) = 13 <0.000009>
-17431 17:31:22.488424 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17478 <0.000023>
-17431 17:31:22.488472 accept(3,  <unfinished ...>
-17478 17:31:22.498924 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000007>
-17478 17:31:22.498987 write(1, "new client_fd: 4\n", 17) = 17 <0.000071>
-17478 17:31:22.499083 read(4, "app 1001 ON", 1024) = 11 <0.000010>
-17478 17:31:22.499112 write(1, "read_size:11\n", 13) = 13 <0.000030>
-17478 17:31:22.499159 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000027>
-17478 17:31:22.499204 write(1, "source:app\n", 11) = 11 <0.000026>
-17478 17:31:22.499249 write(1, "directive:ON\n", 13) = 13 <0.000105>
-17478 17:31:22.499374 write(1, "id:1001\n", 8) = 8 <0.000009>
-17478 17:31:22.499428 write(4, "tcp have received app", 21) = 21 <0.000315>
-17478 17:31:22.503406 close(4)          = 0 <0.000054>
-17478 17:31:22.503534 write(1, "there is no such id\n", 20) = 20 <0.000059>
-17478 17:31:22.503630 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000018>
-17478 17:31:22.503664 _exit(0)          = ?
-17478 17:31:22.503690 +++ exited with 0 +++
-17431 17:31:23.665476 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36449), sin_addr=inet_addr("192.168.1.110")}, [16]) = 5 <1.176994>
-17431 17:31:23.665516 write(1, "get a connect.\n", 15) = 15 <0.000077>
-17431 17:31:23.665617 write(1, "client_fd: 5\n", 13) = 13 <0.000051>
-17431 17:31:23.665694 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17481 <0.000022>
-17431 17:31:23.665740 accept(3,  <unfinished ...>
-17481 17:31:23.677010 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000007>
-17481 17:31:23.677074 write(1, "new client_fd: 5\n", 17) = 17 <0.000050>
-17481 17:31:23.677151 read(5, "app 1001 OFF", 1024) = 12 <0.000012>
-17481 17:31:23.677185 write(1, "read_size:12\n", 13) = 13 <0.000036>
-17481 17:31:23.677241 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000157>
-17481 17:31:23.677439 write(1, "source:app\n", 11) = 11 <0.000012>
-17481 17:31:23.677507 write(1, "directive:OFF\n", 14) = 14 <0.000010>
-17481 17:31:23.677566 write(1, "id:1001\n", 8) = 8 <0.000010>
-17481 17:31:23.677632 write(5, "tcp have received app", 21) = 21 <0.000348>
-17481 17:31:23.681504 close(5)          = 0 <0.000047>
-17481 17:31:23.681614 write(1, "there is no such id\n", 20) = 20 <0.000060>
-17481 17:31:23.681716 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000010>
-17481 17:31:23.681816 _exit(0)          = ?
-17481 17:31:23.681864 +++ exited with 0 +++
-17431 17:31:30.433276 <... accept resumed> {sa_family=AF_INET, sin_port=htons(36450), sin_addr=inet_addr("192.168.1.110")}, [16]) = 4 <6.767523>
-17431 17:31:30.433314 write(1, "get a connect.\n", 15) = 15 <0.000018>
-17431 17:31:30.433354 write(1, "client_fd: 4\n", 13) = 13 <0.000010>
-17431 17:31:30.433439 clone(child_stack=0x7f0b52da1fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f0b52da29d0, tls=0x7f0b52da2700, child_tidptr=0x7f0b52da29d0) = 17484 <0.000023>
-17431 17:31:30.433533 accept(3,  <unfinished ...>
-17484 17:31:30.444256 set_robust_list(0x7f0b52da29e0, 24) = 0 <0.000012>
-17484 17:31:30.444344 write(1, "new client_fd: 4\n", 17) = 17 <0.000160>
-17484 17:31:30.444599 read(4, "app 1001 ON", 1024) = 11 <0.000016>
-17484 17:31:30.444662 write(1, "read_size:11\n", 13) = 13 <0.000029>
-17484 17:31:30.444755 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000012>
-17484 17:31:30.444836 write(1, "source:app\n", 11) = 11 <0.000012>
-17484 17:31:30.444971 write(1, "directive:ON\n", 13) = 13 <0.000045>
-17484 17:31:30.445054 write(1, "id:1001\n", 8) = 8 <0.000040>
-17484 17:31:30.445127 write(4, "tcp have received app", 21) = 21 <0.001030>
-17484 17:31:30.449288 close(4)          = 0 <0.000134>
-17484 17:31:30.449567 write(1, "there is no such id\n", 20) = 20 <0.000095>
-17484 17:31:30.449690 madvise(0x7f0b525a2000, 8368128, MADV_DONTNEED) = 0 <0.000024>
-17484 17:31:30.449734 _exit(0)          = ?
-17484 17:31:30.449780 +++ exited with 0 +++
-17431 17:31:35.925960 <... accept resumed> 0x7fff7aacc7e0, [16]) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <5.492409>
-17431 17:31:35.926139 --- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL, si_value={int=1695028936, ptr=0x7f79650816c8}} ---
-17431 17:31:35.927134 +++ killed by SIGINT +++
+21249 19:21:31.355226 execve("./bin/tcpd", ["./bin/tcpd", "9999"], [/* 46 vars */]) = 0 <0.000135>
+21249 19:21:31.355526 brk(0)            = 0x71f000 <0.000007>
+21249 19:21:31.355575 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f78dbba0000 <0.000009>
+21249 19:21:31.355622 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory) <0.000008>
+21249 19:21:31.355667 open("/home/admin/Git/IOT/SmartHome/lib/lib/tls/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+21249 19:21:31.355707 stat("/home/admin/Git/IOT/SmartHome/lib/lib/tls/x86_64", 0x7ffe3e2d4a40) = -1 ENOENT (No such file or directory) <0.000008>
+21249 19:21:31.355737 open("/home/admin/Git/IOT/SmartHome/lib/lib/tls/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000033>
+21249 19:21:31.355825 stat("/home/admin/Git/IOT/SmartHome/lib/lib/tls", 0x7ffe3e2d4a40) = -1 ENOENT (No such file or directory) <0.000009>
+21249 19:21:31.355856 open("/home/admin/Git/IOT/SmartHome/lib/lib/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000009>
+21249 19:21:31.355883 stat("/home/admin/Git/IOT/SmartHome/lib/lib/x86_64", 0x7ffe3e2d4a40) = -1 ENOENT (No such file or directory) <0.000008>
+21249 19:21:31.355909 open("/home/admin/Git/IOT/SmartHome/lib/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000009>
+21249 19:21:31.355936 stat("/home/admin/Git/IOT/SmartHome/lib/lib", {st_mode=S_IFDIR|0775, st_size=4096, ...}) = 0 <0.000008>
+21249 19:21:31.355967 open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3 <0.000010>
+21249 19:21:31.355996 fstat(3, {st_mode=S_IFREG|0644, st_size=75418, ...}) = 0 <0.000007>
+21249 19:21:31.356023 mmap(NULL, 75418, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f78dbb8d000 <0.000009>
+21249 19:21:31.356051 close(3)          = 0 <0.000007>
+21249 19:21:31.356089 open("/lib64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3 <0.000012>
+21249 19:21:31.356119 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240l\0\0\0\0\0\0"..., 832) = 832 <0.000008>
+21249 19:21:31.356147 fstat(3, {st_mode=S_IFREG|0755, st_size=142296, ...}) = 0 <0.000007>
+21249 19:21:31.356176 mmap(NULL, 2208864, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f78db764000 <0.000010>
+21249 19:21:31.356204 mprotect(0x7f78db77a000, 2097152, PROT_NONE) = 0 <0.000014>
+21249 19:21:31.356235 mmap(0x7f78db97a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7f78db97a000 <0.000017>
+21249 19:21:31.356313 mmap(0x7f78db97c000, 13408, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f78db97c000 <0.000011>
+21249 19:21:31.356355 close(3)          = 0 <0.000008>
+21249 19:21:31.356392 open("/home/admin/Git/IOT/SmartHome/lib/lib/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+21249 19:21:31.356434 open("/lib64/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000013>
+21249 19:21:31.356469 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\265\5\0\0\0\0\0"..., 832) = 832 <0.000009>
+21249 19:21:31.356500 fstat(3, {st_mode=S_IFREG|0755, st_size=995840, ...}) = 0 <0.000009>
+21249 19:21:31.356535 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f78dbb8c000 <0.000010>
+21249 19:21:31.356571 mmap(NULL, 3175456, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f78db45c000 <0.000011>
+21249 19:21:31.356604 mprotect(0x7f78db545000, 2097152, PROT_NONE) = 0 <0.000016>
+21249 19:21:31.356657 mmap(0x7f78db745000, 40960, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe9000) = 0x7f78db745000 <0.000057>
+21249 19:21:31.356768 mmap(0x7f78db74f000, 82976, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f78db74f000 <0.000011>
+21249 19:21:31.356809 close(3)          = 0 <0.000008>
+21249 19:21:31.356842 open("/home/admin/Git/IOT/SmartHome/lib/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+21249 19:21:31.356875 open("/lib64/libm.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000012>
+21249 19:21:31.356913 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260T\0\0\0\0\0\0"..., 832) = 832 <0.000009>
+21249 19:21:31.356941 fstat(3, {st_mode=S_IFREG|0755, st_size=1141552, ...}) = 0 <0.000007>
+21249 19:21:31.356968 mmap(NULL, 3150168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f78db15a000 <0.000010>
+21249 19:21:31.356996 mprotect(0x7f78db25b000, 2093056, PROT_NONE) = 0 <0.000011>
+21249 19:21:31.357023 mmap(0x7f78db45a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x100000) = 0x7f78db45a000 <0.000010>
+21249 19:21:31.357062 close(3)          = 0 <0.000007>
+21249 19:21:31.357093 open("/home/admin/Git/IOT/SmartHome/lib/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+21249 19:21:31.357129 open("/lib64/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3 <0.000011>
+21249 19:21:31.357159 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360*\0\0\0\0\0\0"..., 832) = 832 <0.000007>
+21249 19:21:31.357185 fstat(3, {st_mode=S_IFREG|0755, st_size=88720, ...}) = 0 <0.000006>
+21249 19:21:31.357211 mmap(NULL, 2184192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f78daf44000 <0.000010>
+21249 19:21:31.357240 mprotect(0x7f78daf59000, 2093056, PROT_NONE) = 0 <0.000011>
+21249 19:21:31.357283 mmap(0x7f78db158000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x14000) = 0x7f78db158000 <0.000011>
+21249 19:21:31.357326 close(3)          = 0 <0.000007>
+21249 19:21:31.357356 open("/home/admin/Git/IOT/SmartHome/lib/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+21249 19:21:31.357391 open("/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000011>
+21249 19:21:31.357420 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \34\2\0\0\0\0\0"..., 832) = 832 <0.000008>
+21249 19:21:31.357447 fstat(3, {st_mode=S_IFREG|0755, st_size=2107816, ...}) = 0 <0.000006>
+21249 19:21:31.357473 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f78dbb8b000 <0.000008>
+21249 19:21:31.357503 mmap(NULL, 3932736, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f78dab83000 <0.000010>
+21249 19:21:31.357532 mprotect(0x7f78dad39000, 2097152, PROT_NONE) = 0 <0.000012>
+21249 19:21:31.357561 mmap(0x7f78daf39000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b6000) = 0x7f78daf39000 <0.000010>
+21249 19:21:31.357593 mmap(0x7f78daf3f000, 16960, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f78daf3f000 <0.000009>
+21249 19:21:31.357628 close(3)          = 0 <0.000007>
+21249 19:21:31.357673 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f78dbb8a000 <0.000008>
+21249 19:21:31.357704 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f78dbb88000 <0.000007>
+21249 19:21:31.357740 arch_prctl(ARCH_SET_FS, 0x7f78dbb88740) = 0 <0.000055>
+21249 19:21:31.357993 mprotect(0x7f78daf39000, 16384, PROT_READ) = 0 <0.000019>
+21249 19:21:31.358059 mprotect(0x7f78db158000, 4096, PROT_READ) = 0 <0.000020>
+21249 19:21:31.358145 mprotect(0x7f78db45a000, 4096, PROT_READ) = 0 <0.000020>
+21249 19:21:31.359009 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f78dbb87000 <0.000010>
+21249 19:21:31.359074 mprotect(0x7f78db745000, 32768, PROT_READ) = 0 <0.000011>
+21249 19:21:31.359116 mprotect(0x7f78db97a000, 4096, PROT_READ) = 0 <0.000011>
+21249 19:21:31.359147 mprotect(0x604000, 4096, PROT_READ) = 0 <0.000011>
+21249 19:21:31.359183 mprotect(0x7f78dbba1000, 4096, PROT_READ) = 0 <0.000014>
+21249 19:21:31.359216 munmap(0x7f78dbb8d000, 75418) = 0 <0.000039>
+21249 19:21:31.359278 set_tid_address(0x7f78dbb88a10) = 21249 <0.000007>
+21249 19:21:31.359306 set_robust_list(0x7f78dbb88a20, 24) = 0 <0.000007>
+21249 19:21:31.359334 rt_sigaction(SIGRTMIN, {0x7f78db76a780, [], SA_RESTORER|SA_SIGINFO, 0x7f78db773100}, NULL, 8) = 0 <0.000008>
+21249 19:21:31.359370 rt_sigaction(SIGRT_1, {0x7f78db76a810, [], SA_RESTORER|SA_RESTART|SA_SIGINFO, 0x7f78db773100}, NULL, 8) = 0 <0.000007>
+21249 19:21:31.359405 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0 <0.000007>
+21249 19:21:31.359442 getrlimit(RLIMIT_STACK, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0 <0.000007>
+21249 19:21:31.359548 futex(0x7f78db76196c, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000008>
+21249 19:21:31.359617 futex(0x7f78db761978, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000007>
+21249 19:21:31.359676 socket(PF_INET, SOCK_STREAM, IPPROTO_IP) = 3 <0.000041>
+21249 19:21:31.359766 setsockopt(3, SOL_SOCKET, SO_REUSEADDR, [1], 4) = 0 <0.000045>
+21249 19:21:31.359840 bind(3, {sa_family=AF_INET, sin_port=htons(9999), sin_addr=inet_addr("0.0.0.0")}, 16) = 0 <0.000113>
+21249 19:21:31.359985 listen(3, 10)     = 0 <0.000024>
+21249 19:21:31.360030 accept(3, {sa_family=AF_INET, sin_port=htons(24742), sin_addr=inet_addr("192.168.43.198")}, [16]) = 4 <8.911201>
+21249 19:21:40.271568 fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 4), ...}) = 0 <0.000132>
+21249 19:21:40.272085 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f78dbb9f000 <0.000053>
+21249 19:21:40.272293 write(1, "get a connect.\n", 15) = 15 <0.000544>
+21249 19:21:40.273150 write(1, "client_fd: 4\n", 13) = 13 <0.000350>
+21249 19:21:40.273676 write(1, "no mcu_client\n", 14) = 14 <0.000326>
+21249 19:21:40.274193 mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f78da382000 <0.000049>
+21249 19:21:40.274642 brk(0)            = 0x71f000 <0.000038>
+21249 19:21:40.274788 brk(0x740000)     = 0x740000 <0.000044>
+21249 19:21:40.275020 brk(0)            = 0x740000 <0.000042>
+21249 19:21:40.275224 mprotect(0x7f78da382000, 4096, PROT_NONE) = 0 <0.000097>
+21249 19:21:40.275764 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21250 <0.000225>
+21249 19:21:40.276176 accept(3,  <unfinished ...>
+21250 19:21:40.276359 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000056>
+21250 19:21:40.276928 write(1, "new client_fd: 4\n", 17) = 17 <0.000370>
+21250 19:21:40.277527 read(4, "mcu 1001 open", 1024) = 13 <0.000055>
+21250 19:21:40.277735 write(1, "read_size:13\n", 13) = 13 <0.000372>
+21250 19:21:40.278250 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000316>
+21250 19:21:40.278723 write(1, "source:mcu\n", 11) = 11 <0.000341>
+21250 19:21:40.279220 write(1, "directive:open\n", 15) = 15 <0.000349>
+21250 19:21:40.279722 write(1, "id:1001\n", 8) = 8 <0.000530>
+21250 19:21:40.280548 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f78d2382000 <0.000055>
+21250 19:21:40.280728 munmap(0x7f78d2382000, 29876224) = 0 <0.000189>
+21250 19:21:40.281105 munmap(0x7f78d8000000, 37232640) = 0 <0.000062>
+21250 19:21:40.281288 mprotect(0x7f78d4000000, 135168, PROT_READ|PROT_WRITE) = 0 <0.000115>
+21250 19:21:40.281652 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000052>
+21250 19:21:40.281810 _exit(0)          = ?
+21250 19:21:40.282090 +++ exited with 0 +++
+21249 19:21:58.399714 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40896), sin_addr=inet_addr("192.168.43.24")}, [16]) = 5 <18.123481>
+21249 19:21:58.399779 write(1, "get a connect.\n", 15) = 15 <0.000178>
+21249 19:21:58.400009 write(1, "client_fd: 5\n", 13) = 13 <0.000069>
+21249 19:21:58.400146 write(1, "mcufd:4 mcuid:1001\n", 19) = 19 <0.000062>
+21249 19:21:58.400265 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21253 <0.000037>
+21249 19:21:58.400343 accept(3,  <unfinished ...>
+21253 19:21:58.412665 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000012>
+21253 19:21:58.412755 write(1, "new client_fd: 5\n", 17) = 17 <0.000069>
+21253 19:21:58.412927 read(5, "app 1001 ON", 1024) = 11 <0.000017>
+21253 19:21:58.412984 write(1, "read_size:11\n", 13) = 13 <0.000018>
+21253 19:21:58.413088 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000015>
+21253 19:21:58.413176 write(1, "source:app\n", 11) = 11 <0.000014>
+21253 19:21:58.413260 write(1, "directive:ON\n", 13) = 13 <0.000043>
+21253 19:21:58.413385 write(1, "id:1001\n", 8) = 8 <0.000015>
+21253 19:21:58.413516 write(5, "tcp have received app", 21) = 21 <0.000443>
+21253 19:21:58.417559 close(5)          = 0 <0.000071>
+21253 19:21:58.417708 sendto(4, "ON\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000201>
+21253 19:21:58.418167 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000026>
+21253 19:21:58.418235 _exit(0)          = ?
+21253 19:21:58.418289 +++ exited with 0 +++
+21249 19:24:10.983074 <... accept resumed> {sa_family=AF_INET, sin_port=htons(3597), sin_addr=inet_addr("192.168.43.198")}, [16]) = 6 <132.582705>
+21249 19:24:10.984130 write(1, "get a connect.\n", 15) = 15 <0.000130>
+21249 19:24:10.984399 write(1, "client_fd: 6\n", 13) = 13 <0.000036>
+21249 19:24:10.984551 write(1, "mcufd:4 mcuid:1001\n", 19) = 19 <0.000035>
+21249 19:24:10.984684 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21271 <0.002018>
+21249 19:24:10.987230 accept(3,  <unfinished ...>
+21271 19:24:10.991266 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000033>
+21271 19:24:10.991472 write(1, "new client_fd: 6\n", 17) = 17 <0.000407>
+21271 19:24:10.992037 read(6, "mcu 1001 open", 1024) = 13 <0.000139>
+21271 19:24:10.992447 write(1, "read_size:13\n", 13) = 13 <0.000240>
+21271 19:24:10.993113 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000320>
+21271 19:24:10.993861 write(1, "source:mcu\n", 11) = 11 <0.000411>
+21271 19:24:10.994472 write(1, "directive:open\n", 15) = 15 <0.000306>
+21271 19:24:10.994927 write(1, "id:1001\n", 8) = 8 <0.000167>
+21271 19:24:10.995291 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000055>
+21271 19:24:10.995445 _exit(0)          = ?
+21271 19:24:10.995565 +++ exited with 0 +++
+21249 19:24:29.187619 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40897), sin_addr=inet_addr("192.168.43.24")}, [16]) = 5 <18.200213>
+21249 19:24:29.187662 write(1, "get a connect.\n", 15) = 15 <0.000121>
+21249 19:24:29.187815 write(1, "client_fd: 5\n", 13) = 13 <0.000048>
+21249 19:24:29.187898 write(1, "mcufd:6 mcuid:1001\n", 19) = 19 <0.000012>
+21249 19:24:29.187974 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21281 <0.000026>
+21249 19:24:29.188029 accept(3,  <unfinished ...>
+21281 19:24:29.195595 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000010>
+21281 19:24:29.195719 write(1, "new client_fd: 5\n", 17) = 17 <0.000075>
+21281 19:24:29.195826 read(5, "app 1001 OFF", 1024) = 12 <0.000012>
+21281 19:24:29.195860 write(1, "read_size:12\n", 13) = 13 <0.000036>
+21281 19:24:29.195917 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000033>
+21281 19:24:29.195973 write(1, "source:app\n", 11) = 11 <0.000034>
+21281 19:24:29.196027 write(1, "directive:OFF\n", 14) = 14 <0.000032>
+21281 19:24:29.196081 write(1, "id:1001\n", 8) = 8 <0.000033>
+21281 19:24:29.196140 write(5, "tcp have received app", 21) = 21 <0.000578>
+21281 19:24:29.206704 close(5)          = 0 <0.000101>
+21281 19:24:29.206959 sendto(6, "OFF\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000252>
+21281 19:24:29.207554 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000058>
+21281 19:24:29.207736 _exit(0)          = ?
+21281 19:24:29.207773 +++ exited with 0 +++
+21249 19:24:57.065109 <... accept resumed> {sa_family=AF_INET, sin_port=htons(39490), sin_addr=inet_addr("192.168.43.198")}, [16]) = 7 <27.877058>
+21249 19:24:57.065454 write(1, "get a connect.\n", 15) = 15 <0.000060>
+21249 19:24:57.065668 write(1, "client_fd: 7\n", 13) = 13 <0.000165>
+21249 19:24:57.065972 write(1, "mcufd:6 mcuid:1001\n", 19) = 19 <0.000040>
+21249 19:24:57.066130 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21282 <0.000166>
+21249 19:24:57.066418 accept(3,  <unfinished ...>
+21282 19:24:57.067345 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000084>
+21282 19:24:57.067708 write(1, "new client_fd: 7\n", 17) = 17 <0.000445>
+21282 19:24:57.068582 read(7, "mcu 1001 open", 1024) = 13 <0.000058>
+21282 19:24:57.068970 write(1, "read_size:13\n", 13) = 13 <0.000360>
+21282 19:24:57.069483 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000353>
+21282 19:24:57.070002 write(1, "source:mcu\n", 11) = 11 <0.000421>
+21282 19:24:57.070578 write(1, "directive:open\n", 15) = 15 <0.000462>
+21282 19:24:57.071277 write(1, "id:1001\n", 8) = 8 <0.000237>
+21282 19:24:57.071668 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000065>
+21282 19:24:57.071977 _exit(0)          = ?
+21282 19:24:57.072131 +++ exited with 0 +++
+21249 19:24:58.697766 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40898), sin_addr=inet_addr("192.168.43.24")}, [16]) = 5 <1.631262>
+21249 19:24:58.697959 write(1, "get a connect.\n", 15) = 15 <0.000210>
+21249 19:24:58.698269 write(1, "client_fd: 5\n", 13) = 13 <0.000220>
+21249 19:24:58.698590 write(1, "mcufd:7 mcuid:1001\n", 19) = 19 <0.000138>
+21249 19:24:58.698826 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21285 <0.000078>
+21249 19:24:58.699093 accept(3,  <unfinished ...>
+21285 19:24:58.722592 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000058>
+21285 19:24:58.722935 write(1, "new client_fd: 5\n", 17) = 17 <0.000315>
+21285 19:24:58.723408 read(5, "app 1001 ON", 1024) = 11 <0.000047>
+21285 19:24:58.723578 write(1, "read_size:11\n", 13) = 13 <0.000276>
+21285 19:24:58.724001 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000262>
+21285 19:24:58.724423 write(1, "source:app\n", 11) = 11 <0.000326>
+21285 19:24:58.724894 write(1, "directive:ON\n", 13) = 13 <0.000234>
+21285 19:24:58.725252 write(1, "id:1001\n", 8) = 8 <0.000438>
+21285 19:24:58.725860 write(5, "tcp have received app", 21) = 21 <0.002616>
+21285 19:24:58.731314 close(5)          = 0 <0.000712>
+21285 19:24:58.732323 sendto(7, "ON\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000577>
+21285 19:24:58.733918 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000022>
+21285 19:24:58.734029 _exit(0)          = ?
+21285 19:24:58.734289 +++ exited with 0 +++
+21249 19:26:40.894920 <... accept resumed> {sa_family=AF_INET, sin_port=htons(5040), sin_addr=inet_addr("192.168.43.198")}, [16]) = 8 <102.195782>
+21249 19:26:40.895313 write(1, "get a connect.\n", 15) = 15 <0.000067>
+21249 19:26:40.895680 write(1, "client_fd: 8\n", 13) = 13 <0.000176>
+21249 19:26:40.896495 write(1, "mcufd:7 mcuid:1001\n", 19) = 19 <0.000193>
+21249 19:26:40.897266 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21302 <0.000156>
+21249 19:26:40.897822 accept(3,  <unfinished ...>
+21302 19:26:40.899183 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000033>
+21302 19:26:40.899459 write(1, "new client_fd: 8\n", 17) = 17 <0.000311>
+21302 19:26:40.900161 read(8, "mcu 1001 open", 1024) = 13 <0.000048>
+21302 19:26:40.900330 write(1, "read_size:13\n", 13) = 13 <0.000550>
+21302 19:26:40.901151 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000205>
+21302 19:26:40.901587 write(1, "source:mcu\n", 11) = 11 <0.000181>
+21302 19:26:40.901890 write(1, "directive:open\n", 15) = 15 <0.000320>
+21302 19:26:40.902371 write(1, "id:1001\n", 8) = 8 <0.000406>
+21302 19:26:40.902942 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000131>
+21302 19:26:40.903557 _exit(0)          = ?
+21302 19:26:40.903724 +++ exited with 0 +++
+21249 19:26:43.012944 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40899), sin_addr=inet_addr("192.168.43.24")}, [16]) = 5 <2.115015>
+21249 19:26:43.013006 write(1, "get a connect.\n", 15) = 15 <0.000116>
+21249 19:26:43.013160 write(1, "client_fd: 5\n", 13) = 13 <0.000059>
+21249 19:26:43.013292 write(1, "mcufd:8 mcuid:1001\n", 19) = 19 <0.000065>
+21249 19:26:43.013406 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21305 <0.000034>
+21249 19:26:43.013477 accept(3,  <unfinished ...>
+21305 19:26:43.013720 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000011>
+21305 19:26:43.013863 write(1, "new client_fd: 5\n", 17) = 17 <0.000114>
+21305 19:26:43.014044 read(5, "app 1001 OFF", 1024) = 12 <0.000024>
+21305 19:26:43.014128 write(1, "read_size:12\n", 13) = 13 <0.000140>
+21305 19:26:43.014335 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000110>
+21305 19:26:43.014511 write(1, "source:app\n", 11) = 11 <0.000067>
+21305 19:26:43.014619 write(1, "directive:OFF\n", 14) = 14 <0.000056>
+21305 19:26:43.014711 write(1, "id:1001\n", 8) = 8 <0.000124>
+21305 19:26:43.014891 write(5, "tcp have received app", 21) = 21 <0.000937>
+21305 19:26:43.032196 close(5)          = 0 <0.000116>
+21305 19:26:43.033568 sendto(8, "OFF\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000293>
+21305 19:26:43.034280 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000045>
+21305 19:26:43.034396 _exit(0)          = ?
+21305 19:26:43.034454 +++ exited with 0 +++
+21249 19:28:55.869093 <... accept resumed> {sa_family=AF_INET, sin_port=htons(33282), sin_addr=inet_addr("192.168.43.198")}, [16]) = 9 <132.855592>
+21249 19:28:55.869418 write(1, "get a connect.\n", 15) = 15 <0.000072>
+21249 19:28:55.869637 write(1, "client_fd: 9\n", 13) = 13 <0.000044>
+21249 19:28:55.869804 write(1, "mcufd:8 mcuid:1001\n", 19) = 19 <0.000309>
+21249 19:28:55.870269 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21323 <0.000183>
+21249 19:28:55.870607 accept(3,  <unfinished ...>
+21323 19:28:55.871180 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000039>
+21323 19:28:55.871426 write(1, "new client_fd: 9\n", 17) = 17 <0.000243>
+21323 19:28:55.871803 read(9, "mcu 1001 open", 1024) = 13 <0.000062>
+21323 19:28:55.872159 write(1, "read_size:13\n", 13) = 13 <0.000407>
+21323 19:28:55.873000 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000310>
+21323 19:28:55.873467 write(1, "source:mcu\n", 11) = 11 <0.000488>
+21323 19:28:55.874133 write(1, "directive:open\n", 15) = 15 <0.000325>
+21323 19:28:55.874607 write(1, "id:1001\n", 8) = 8 <0.000355>
+21323 19:28:55.875124 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000053>
+21323 19:28:55.875290 _exit(0)          = ?
+21323 19:28:55.875565 +++ exited with 0 +++
+21249 19:29:02.446181 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40900), sin_addr=inet_addr("192.168.43.24")}, [16]) = 5 <6.575520>
+21249 19:29:02.446430 write(1, "get a connect.\n", 15) = 15 <0.000051>
+21249 19:29:02.446568 write(1, "client_fd: 5\n", 13) = 13 <0.000034>
+21249 19:29:02.446680 write(1, "mcufd:9 mcuid:1001\n", 19) = 19 <0.000049>
+21249 19:29:02.446998 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21326 <0.000070>
+21249 19:29:02.447160 accept(3,  <unfinished ...>
+21326 19:29:02.459268 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000015>
+21326 19:29:02.459362 write(1, "new client_fd: 5\n", 17) = 17 <0.000087>
+21326 19:29:02.459497 read(5, "app 1001 ON", 1024) = 11 <0.000019>
+21326 19:29:02.459560 write(1, "read_size:11\n", 13) = 13 <0.000130>
+21326 19:29:02.459742 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000077>
+21326 19:29:02.459869 write(1, "source:app\n", 11) = 11 <0.000073>
+21326 19:29:02.459984 write(1, "directive:ON\n", 13) = 13 <0.000072>
+21326 19:29:02.460147 write(1, "id:1001\n", 8) = 8 <0.000083>
+21326 19:29:02.460313 write(5, "tcp have received app", 21) = 21 <0.000675>
+21326 19:29:02.464456 close(5)          = 0 <0.000135>
+21326 19:29:02.464733 sendto(9, "ON\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000283>
+21326 19:29:02.465613 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000102>
+21326 19:29:02.465765 _exit(0)          = ?
+21326 19:29:02.465819 +++ exited with 0 +++
+21249 19:30:51.590038 <... accept resumed> {sa_family=AF_INET, sin_port=htons(46999), sin_addr=inet_addr("192.168.43.198")}, [16]) = 10 <109.142756>
+21249 19:30:51.590943 write(1, "get a connect.\n", 15) = 15 <0.000409>
+21249 19:30:51.591518 write(1, "client_fd: 10\n", 14) = 14 <0.000244>
+21249 19:30:51.592045 write(1, "mcufd:9 mcuid:1001\n", 19) = 19 <0.000233>
+21249 19:30:51.592505 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21444 <0.000212>
+21249 19:30:51.592871 accept(3,  <unfinished ...>
+21444 19:30:51.596061 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000046>
+21444 19:30:51.596273 write(1, "new client_fd: 10\n", 18) = 18 <0.000372>
+21444 19:30:51.596781 read(10, "mcu 1001 open", 1024) = 13 <0.000055>
+21444 19:30:51.596967 write(1, "read_size:13\n", 13) = 13 <0.000241>
+21444 19:30:51.597468 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000232>
+21444 19:30:51.597936 write(1, "source:mcu\n", 11) = 11 <0.000294>
+21444 19:30:51.598366 write(1, "directive:open\n", 15) = 15 <0.000299>
+21444 19:30:51.598799 write(1, "id:1001\n", 8) = 8 <0.000344>
+21444 19:30:51.599301 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000052>
+21444 19:30:51.599464 _exit(0)          = ?
+21444 19:30:51.599682 +++ exited with 0 +++
+21249 19:31:01.829513 <... accept resumed> {sa_family=AF_INET, sin_port=htons(49526), sin_addr=inet_addr("192.168.43.198")}, [16]) = 5 <10.236577>
+21249 19:31:01.829990 write(1, "get a connect.\n", 15) = 15 <0.000446>
+21249 19:31:01.830595 write(1, "client_fd: 5\n", 13) = 13 <0.000244>
+21249 19:31:01.831472 write(1, "mcufd:10 mcuid:1001\n", 20) = 20 <0.000255>
+21249 19:31:01.832323 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21445 <0.000096>
+21249 19:31:01.832724 accept(3,  <unfinished ...>
+21445 19:31:01.833247 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000050>
+21445 19:31:01.833472 write(1, "new client_fd: 5\n", 17) = 17 <0.000491>
+21445 19:31:01.834397 read(5, "mcu 1001 open", 1024) = 13 <0.000286>
+21445 19:31:01.834875 write(1, "read_size:13\n", 13) = 13 <0.000539>
+21445 19:31:01.835984 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000536>
+21445 19:31:01.837165 write(1, "source:mcu\n", 11) = 11 <0.000469>
+21445 19:31:01.837846 write(1, "directive:open\n", 15) = 15 <0.000274>
+21445 19:31:01.838252 write(1, "id:1001\n", 8) = 8 <0.000159>
+21445 19:31:01.838742 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000049>
+21445 19:31:01.838921 _exit(0)          = ?
+21445 19:31:01.839133 +++ exited with 0 +++
+21249 19:31:02.628342 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40901), sin_addr=inet_addr("192.168.43.24")}, [16]) = 11 <0.795402>
+21249 19:31:02.628411 write(1, "get a connect.\n", 15) = 15 <0.000109>
+21249 19:31:02.628571 write(1, "client_fd: 11\n", 14) = 14 <0.000054>
+21249 19:31:02.628667 write(1, "mcufd:5 mcuid:1001\n", 19) = 19 <0.000052>
+21249 19:31:02.628758 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21448 <0.000035>
+21249 19:31:02.628827 accept(3,  <unfinished ...>
+21448 19:31:02.639988 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000022>
+21448 19:31:02.640141 write(1, "new client_fd: 11\n", 18) = 18 <0.000230>
+21448 19:31:02.640454 read(11, "app 1001 OFF", 1024) = 12 <0.000031>
+21448 19:31:02.640558 write(1, "read_size:12\n", 13) = 13 <0.000108>
+21448 19:31:02.640799 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000118>
+21448 19:31:02.641005 write(1, "source:app\n", 11) = 11 <0.000096>
+21448 19:31:02.641163 write(1, "directive:OFF\n", 14) = 14 <0.000182>
+21448 19:31:02.641423 write(1, "id:1001\n", 8) = 8 <0.000102>
+21448 19:31:02.641611 write(11, "tcp have received app", 21) = 21 <0.001246>
+21448 19:31:02.646243 close(11)         = 0 <0.000146>
+21448 19:31:02.646601 sendto(5, "OFF\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000533>
+21448 19:31:02.647894 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000035>
+21448 19:31:02.648008 _exit(0)          = ?
+21448 19:31:02.648097 +++ exited with 0 +++
+21249 19:38:55.937202 <... accept resumed> {sa_family=AF_INET, sin_port=htons(14838), sin_addr=inet_addr("192.168.43.198")}, [16]) = 12 <473.308272>
+21249 19:38:55.937583 write(1, "get a connect.\n", 15) = 15 <0.000481>
+21249 19:38:55.938403 write(1, "client_fd: 12\n", 14) = 14 <0.000526>
+21249 19:38:55.939195 write(1, "mcufd:5 mcuid:1001\n", 19) = 19 <0.000238>
+21249 19:38:55.939599 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21535 <0.000327>
+21249 19:38:55.940093 accept(3,  <unfinished ...>
+21535 19:38:55.942979 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000040>
+21535 19:38:55.943228 write(1, "new client_fd: 12\n", 18) = 18 <0.000249>
+21535 19:38:55.943612 read(12, "mcu 1001 open", 1024) = 13 <0.000062>
+21535 19:38:55.943929 write(1, "read_size:13\n", 13) = 13 <0.000323>
+21535 19:38:55.944380 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000335>
+21535 19:38:55.944875 write(1, "source:mcu\n", 11) = 11 <0.000305>
+21535 19:38:55.945321 write(1, "directive:open\n", 15) = 15 <0.000207>
+21535 19:38:55.945787 write(1, "id:1001\n", 8) = 8 <0.000223>
+21535 19:38:55.946223 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000050>
+21535 19:38:55.946389 _exit(0)          = ?
+21535 19:38:55.946527 +++ exited with 0 +++
+21249 19:38:57.114720 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40902), sin_addr=inet_addr("192.168.43.24")}, [16]) = 11 <1.174495>
+21249 19:38:57.114834 write(1, "get a connect.\n", 15) = 15 <0.000281>
+21249 19:38:57.115209 write(1, "client_fd: 11\n", 14) = 14 <0.000188>
+21249 19:38:57.115499 write(1, "mcufd:12 mcuid:1001\n", 20) = 20 <0.000140>
+21249 19:38:57.115732 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21538 <0.000066>
+21249 19:38:57.115987 accept(3,  <unfinished ...>
+21538 19:38:57.116664 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000032>
+21538 19:38:57.116792 write(1, "new client_fd: 11\n", 18) = 18 <0.000239>
+21538 19:38:57.117131 read(11, "app 1001 ON", 1024) = 11 <0.000031>
+21538 19:38:57.117244 write(1, "read_size:11\n", 13) = 13 <0.000317>
+21538 19:38:57.117647 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000139>
+21538 19:38:57.117954 write(1, "source:app\n", 11) = 11 <0.000145>
+21538 19:38:57.118220 write(1, "directive:ON\n", 13) = 13 <0.000201>
+21538 19:38:57.118503 write(1, "id:1001\n", 8) = 8 <0.000132>
+21538 19:38:57.118724 write(11, "tcp have received app", 21) = 21 <0.001285>
+21538 19:38:57.131174 close(11)         = 0 <0.000411>
+21538 19:38:57.131955 sendto(12, "ON\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000573>
+21538 19:38:57.133087 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000049>
+21538 19:38:57.133409 _exit(0)          = ?
+21538 19:38:57.133504 +++ exited with 0 +++
+21249 19:39:14.346610 <... accept resumed> {sa_family=AF_INET, sin_port=htons(16350), sin_addr=inet_addr("192.168.43.198")}, [16]) = 13 <17.230558>
+21249 19:39:14.347107 write(1, "get a connect.\n", 15) = 15 <0.000132>
+21249 19:39:14.347432 write(1, "client_fd: 13\n", 14) = 14 <0.000049>
+21249 19:39:14.347619 write(1, "mcufd:12 mcuid:1001\n", 20) = 20 <0.000044>
+21249 19:39:14.347898 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21547 <0.000113>
+21249 19:39:14.348164 accept(3,  <unfinished ...>
+21547 19:39:14.348683 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000154>
+21547 19:39:14.348988 write(1, "new client_fd: 13\n", 18) = 18 <0.000321>
+21547 19:39:14.349519 read(13, "mcu 1001 open", 1024) = 13 <0.000059>
+21547 19:39:14.349716 write(1, "read_size:13\n", 13) = 13 <0.000301>
+21547 19:39:14.350371 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000235>
+21547 19:39:14.350884 write(1, "source:mcu\n", 11) = 11 <0.000247>
+21547 19:39:14.351381 write(1, "directive:open\n", 15) = 15 <0.000232>
+21547 19:39:14.351896 write(1, "id:1001\n", 8) = 8 <0.000462>
+21547 19:39:14.352682 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000069>
+21547 19:39:14.352963 _exit(0)          = ?
+21547 19:39:14.353114 +++ exited with 0 +++
+21249 19:39:16.366191 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40903), sin_addr=inet_addr("192.168.43.24")}, [16]) = 11 <2.017979>
+21249 19:39:16.366351 write(1, "get a connect.\n", 15) = 15 <0.000057>
+21249 19:39:16.366515 write(1, "client_fd: 11\n", 14) = 14 <0.000105>
+21249 19:39:16.366874 write(1, "mcufd:13 mcuid:1001\n", 20) = 20 <0.000039>
+21249 19:39:16.367007 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21550 <0.000261>
+21249 19:39:16.367354 accept(3,  <unfinished ...>
+21550 19:39:16.368215 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000026>
+21550 19:39:16.368350 write(1, "new client_fd: 11\n", 18) = 18 <0.000239>
+21550 19:39:16.368744 read(11, "app 1001 OFF", 1024) = 12 <0.000033>
+21550 19:39:16.368862 write(1, "read_size:12\n", 13) = 13 <0.000136>
+21550 19:39:16.369148 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000145>
+21550 19:39:16.369392 write(1, "source:app\n", 11) = 11 <0.000197>
+21550 19:39:16.369682 write(1, "directive:OFF\n", 14) = 14 <0.000141>
+21550 19:39:16.369907 write(1, "id:1001\n", 8) = 8 <0.000174>
+21550 19:39:16.370170 write(11, "tcp have received app", 21) = 21 <0.001165>
+21550 19:39:16.375741 close(11)         = 0 <0.000149>
+21550 19:39:16.376132 sendto(13, "OFF\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000411>
+21550 19:39:16.376975 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000105>
+21550 19:39:16.377229 _exit(0)          = ?
+21550 19:39:16.377319 +++ exited with 0 +++
+21249 19:40:44.486796 <... accept resumed> {sa_family=AF_INET, sin_port=htons(26817), sin_addr=inet_addr("192.168.43.198")}, [16]) = 14 <88.119394>
+21249 19:40:44.487232 write(1, "get a connect.\n", 15) = 15 <0.000086>
+21249 19:40:44.487788 write(1, "client_fd: 14\n", 14) = 14 <0.000069>
+21249 19:40:44.488053 write(1, "mcufd:13 mcuid:1001\n", 20) = 20 <0.000056>
+21249 19:40:44.488370 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21661 <0.000107>
+21249 19:40:44.488725 accept(3,  <unfinished ...>
+21661 19:40:44.489277 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000037>
+21661 19:40:44.489439 write(1, "new client_fd: 14\n", 18) = 18 <0.000364>
+21661 19:40:44.489944 read(14, "mcu 1001 open", 1024) = 13 <0.000054>
+21661 19:40:44.490209 write(1, "read_size:13\n", 13) = 13 <0.000231>
+21661 19:40:44.490720 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000307>
+21661 19:40:44.491201 write(1, "source:mcu\n", 11) = 11 <0.000223>
+21661 19:40:44.491657 write(1, "directive:open\n", 15) = 15 <0.000227>
+21661 19:40:44.492033 write(1, "id:1001\n", 8) = 8 <0.000227>
+21661 19:40:44.492469 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000158>
+21661 19:40:44.492752 _exit(0)          = ?
+21661 19:40:44.492905 +++ exited with 0 +++
+21249 19:40:57.329781 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40904), sin_addr=inet_addr("192.168.43.24")}, [16]) = 11 <12.840983>
+21249 19:40:57.329861 write(1, "get a connect.\n", 15) = 15 <0.000123>
+21249 19:40:57.330029 write(1, "client_fd: 11\n", 14) = 14 <0.000067>
+21249 19:40:57.330146 write(1, "mcufd:14 mcuid:1001\n", 20) = 20 <0.000103>
+21249 19:40:57.330302 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21664 <0.000051>
+21249 19:40:57.330400 accept(3,  <unfinished ...>
+21664 19:40:57.330684 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000014>
+21664 19:40:57.330795 write(1, "new client_fd: 11\n", 18) = 18 <0.000082>
+21664 19:40:57.330923 read(11, "app 1001 ON", 1024) = 11 <0.000017>
+21664 19:40:57.330981 write(1, "read_size:11\n", 13) = 13 <0.000066>
+21664 19:40:57.331086 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000063>
+21664 19:40:57.331193 write(1, "source:app\n", 11) = 11 <0.000093>
+21664 19:40:57.331374 write(1, "directive:ON\n", 13) = 13 <0.000066>
+21664 19:40:57.331491 write(1, "id:1001\n", 8) = 8 <0.000064>
+21664 19:40:57.331602 write(11, "tcp have received app", 21) = 21 <0.000637>
+21664 19:40:57.335764 close(11)         = 0 <0.000151>
+21664 19:40:57.336079 sendto(14, "ON\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000311>
+21664 19:40:57.336820 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000025>
+21664 19:40:57.336894 _exit(0)          = ?
+21664 19:40:57.336984 +++ exited with 0 +++
+21249 19:40:57.345883 <... accept resumed> {sa_family=AF_INET, sin_port=htons(21317), sin_addr=inet_addr("192.168.43.198")}, [16]) = 15 <0.015465>
+21249 19:40:57.345957 write(1, "get a connect.\n", 15) = 15 <0.000232>
+21249 19:40:57.346244 write(1, "client_fd: 15\n", 14) = 14 <0.000030>
+21249 19:40:57.346387 write(1, "mcufd:14 mcuid:1001\n", 20) = 20 <0.000017>
+21249 19:40:57.346445 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21665 <0.000071>
+21249 19:40:57.346551 accept(3,  <unfinished ...>
+21665 19:40:57.352165 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000015>
+21665 19:40:57.352237 write(1, "new client_fd: 15\n", 18) = 18 <0.009055>
+21665 19:40:57.361414 read(15, "mcu 1001 open", 1024) = 13 <0.000060>
+21665 19:40:57.361597 write(1, "read_size:13\n", 13) = 13 <0.000026>
+21665 19:40:57.361730 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000020>
+21665 19:40:57.361843 write(1, "source:mcu\n", 11) = 11 <0.000018>
+21665 19:40:57.361952 write(1, "directive:open\n", 15) = 15 <0.000047>
+21665 19:40:57.362150 write(1, "id:1001\n", 8) = 8 <0.000019>
+21665 19:40:57.362267 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000020>
+21665 19:40:57.362337 _exit(0)          = ?
+21665 19:40:57.362386 +++ exited with 0 +++
+21249 19:40:57.960035 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40905), sin_addr=inet_addr("192.168.43.24")}, [16]) = 11 <0.613467>
+21249 19:40:57.960089 write(1, "get a connect.\n", 15) = 15 <0.000108>
+21249 19:40:57.960266 write(1, "client_fd: 11\n", 14) = 14 <0.000064>
+21249 19:40:57.960377 write(1, "mcufd:15 mcuid:1001\n", 20) = 20 <0.000052>
+21249 19:40:57.960467 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21668 <0.000032>
+21249 19:40:57.960533 accept(3,  <unfinished ...>
+21668 19:40:57.960841 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000010>
+21668 19:40:57.960886 write(1, "new client_fd: 11\n", 18) = 18 <0.000067>
+21668 19:40:57.960985 read(11, "app 1001 OFF", 1024) = 12 <0.000013>
+21668 19:40:57.961032 write(1, "read_size:12\n", 13) = 13 <0.000052>
+21668 19:40:57.961114 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000050>
+21668 19:40:57.961199 write(1, "source:app\n", 11) = 11 <0.000114>
+21668 19:40:57.961344 write(1, "directive:OFF\n", 14) = 14 <0.000039>
+21668 19:40:57.961407 write(1, "id:1001\n", 8) = 8 <0.000033>
+21668 19:40:57.961465 write(11, "tcp have received app", 21) = 21 <0.000541>
+21668 19:40:57.971731 close(11)         = 0 <0.000073>
+21668 19:40:57.971912 sendto(15, "OFF\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000185>
+21668 19:40:57.972347 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000038>
+21668 19:40:57.972417 _exit(0)          = ?
+21668 19:40:57.972472 +++ exited with 0 +++
+21249 19:41:05.978025 <... accept resumed> {sa_family=AF_INET, sin_port=htons(43032), sin_addr=inet_addr("192.168.43.198")}, [16]) = 16 <8.017469>
+21249 19:41:05.978373 write(1, "get a connect.\n", 15) = 15 <0.000065>
+21249 19:41:05.978574 write(1, "client_fd: 16\n", 14) = 14 <0.000044>
+21249 19:41:05.978858 write(1, "mcufd:15 mcuid:1001\n", 20) = 20 <0.000049>
+21249 19:41:05.979059 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21669 <0.000172>
+21249 19:41:05.979370 accept(3,  <unfinished ...>
+21669 19:41:05.979930 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000038>
+21669 19:41:05.980095 write(1, "new client_fd: 16\n", 18) = 18 <0.000436>
+21669 19:41:05.980668 read(16, "mcu 1001 open", 1024) = 13 <0.000060>
+21669 19:41:05.980994 write(1, "read_size:13\n", 13) = 13 <0.000327>
+21669 19:41:05.981449 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000553>
+21669 19:41:05.982456 write(1, "source:mcu\n", 11) = 11 <0.000468>
+21669 19:41:05.983142 write(1, "directive:open\n", 15) = 15 <0.000848>
+21669 19:41:05.984378 write(1, "id:1001\n", 8) = 8 <0.000063>
+21669 19:41:05.984971 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000147>
+21669 19:41:05.985297 _exit(0)          = ?
+21669 19:41:05.985462 +++ exited with 0 +++
+21249 19:41:15.392267 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40906), sin_addr=inet_addr("192.168.43.24")}, [16]) = 11 <9.412846>
+21249 19:41:15.392338 write(1, "get a connect.\n", 15) = 15 <0.000161>
+21249 19:41:15.392593 write(1, "client_fd: 11\n", 14) = 14 <0.000064>
+21249 19:41:15.392709 write(1, "mcufd:16 mcuid:1001\n", 20) = 20 <0.000060>
+21249 19:41:15.392815 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21680 <0.000036>
+21249 19:41:15.392943 accept(3,  <unfinished ...>
+21680 19:41:15.393604 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000012>
+21680 19:41:15.393679 write(1, "new client_fd: 11\n", 18) = 18 <0.000110>
+21680 19:41:15.393834 read(11, "app 1001 ON", 1024) = 11 <0.000025>
+21680 19:41:15.393983 write(1, "read_size:11\n", 13) = 13 <0.000079>
+21680 19:41:15.394102 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000060>
+21680 19:41:15.394203 write(1, "source:app\n", 11) = 11 <0.000059>
+21680 19:41:15.394299 write(1, "directive:ON\n", 13) = 13 <0.000102>
+21680 19:41:15.394443 write(1, "id:1001\n", 8) = 8 <0.000061>
+21680 19:41:15.394553 write(11, "tcp have received app", 21) = 21 <0.000694>
+21680 19:41:15.398670 close(11)         = 0 <0.000099>
+21680 19:41:15.409432 sendto(16, "ON\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000376>
+21680 19:41:15.410311 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000023>
+21680 19:41:15.410404 _exit(0)          = ?
+21680 19:41:15.410465 +++ exited with 0 +++
+21249 19:41:16.200216 <... accept resumed> {sa_family=AF_INET, sin_port=htons(32712), sin_addr=inet_addr("192.168.43.198")}, [16]) = 17 <0.807234>
+21249 19:41:16.200474 write(1, "get a connect.\n", 15) = 15 <0.000085>
+21249 19:41:16.200768 write(1, "client_fd: 17\n", 14) = 14 <0.000055>
+21249 19:41:16.200955 write(1, "mcufd:16 mcuid:1001\n", 20) = 20 <0.000066>
+21249 19:41:16.201285 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21681 <0.000106>
+21249 19:41:16.201600 accept(3,  <unfinished ...>
+21681 19:41:16.202140 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000039>
+21681 19:41:16.202321 write(1, "new client_fd: 17\n", 18) = 18 <0.000347>
+21681 19:41:16.202794 read(17, "mcu 1001 open", 1024) = 13 <0.000053>
+21681 19:41:16.203078 write(1, "read_size:13\n", 13) = 13 <0.000235>
+21681 19:41:16.203463 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000257>
+21681 19:41:16.204091 write(1, "source:mcu\n", 11) = 11 <0.000228>
+21681 19:41:16.204564 write(1, "directive:open\n", 15) = 15 <0.000230>
+21681 19:41:16.204933 write(1, "id:1001\n", 8) = 8 <0.000232>
+21681 19:41:16.205420 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000058>
+21681 19:41:16.205662 _exit(0)          = ?
+21681 19:41:16.205807 +++ exited with 0 +++
+21249 19:41:39.604370 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40907), sin_addr=inet_addr("192.168.43.24")}, [16]) = 11 <23.402713>
+21249 19:41:39.604451 write(1, "get a connect.\n", 15) = 15 <0.000032>
+21249 19:41:39.604530 write(1, "client_fd: 11\n", 14) = 14 <0.000020>
+21249 19:41:39.604598 write(1, "mcufd:17 mcuid:1001\n", 20) = 20 <0.000020>
+21249 19:41:39.604665 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21707 <0.000095>
+21249 19:41:39.604817 accept(3,  <unfinished ...>
+21707 19:41:39.615914 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000016>
+21707 19:41:39.616020 write(1, "new client_fd: 11\n", 18) = 18 <0.000152>
+21707 19:41:39.616233 read(11, "app 1001 OFF", 1024) = 12 <0.000023>
+21707 19:41:39.616311 write(1, "read_size:12\n", 13) = 13 <0.000085>
+21707 19:41:39.616441 write(1, "request from cgi:app 1001 OFF\n", 30) = 30 <0.000078>
+21707 19:41:39.616569 write(1, "source:app\n", 11) = 11 <0.000166>
+21707 19:41:39.616797 write(1, "directive:OFF\n", 14) = 14 <0.000084>
+21707 19:41:39.616934 write(1, "id:1001\n", 8) = 8 <0.000078>
+21707 19:41:39.617066 write(11, "tcp have received app", 21) = 21 <0.000710>
+21707 19:41:39.621284 close(11)         = 0 <0.000093>
+21707 19:41:39.621488 sendto(17, "OFF\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000338>
+21707 19:41:39.622234 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000021>
+21707 19:41:39.622331 _exit(0)          = ?
+21707 19:41:39.622386 +++ exited with 0 +++
+21249 19:41:48.979011 <... accept resumed> {sa_family=AF_INET, sin_port=htons(30406), sin_addr=inet_addr("192.168.43.198")}, [16]) = 18 <9.374161>
+21249 19:41:48.979376 write(1, "get a connect.\n", 15) = 15 <0.000069>
+21249 19:41:48.979749 write(1, "client_fd: 18\n", 14) = 14 <0.000056>
+21249 19:41:48.980014 write(1, "mcufd:17 mcuid:1001\n", 20) = 20 <0.000045>
+21249 19:41:48.980186 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21708 <0.000227>
+21249 19:41:48.980556 accept(3,  <unfinished ...>
+21708 19:41:48.981143 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000040>
+21708 19:41:48.981500 write(1, "new client_fd: 18\n", 18) = 18 <0.000486>
+21708 19:41:48.982191 read(18, "mcu 1001 open", 1024) = 13 <0.000077>
+21708 19:41:48.982544 write(1, "read_size:13\n", 13) = 13 <0.000424>
+21708 19:41:48.983130 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000303>
+21708 19:41:48.983583 write(1, "source:mcu\n", 11) = 11 <0.000342>
+21708 19:41:48.984079 write(1, "directive:open\n", 15) = 15 <0.000303>
+21708 19:41:48.984523 write(1, "id:1001\n", 8) = 8 <0.000340>
+21708 19:41:48.985024 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000055>
+21708 19:41:48.985190 _exit(0)          = ?
+21708 19:41:48.985401 +++ exited with 0 +++
+21249 19:41:58.655294 <... accept resumed> {sa_family=AF_INET, sin_port=htons(40908), sin_addr=inet_addr("192.168.43.24")}, [16]) = 11 <9.674651>
+21249 19:41:58.655378 write(1, "get a connect.\n", 15) = 15 <0.000135>
+21249 19:41:58.655563 write(1, "client_fd: 11\n", 14) = 14 <0.000082>
+21249 19:41:58.655700 write(1, "mcufd:18 mcuid:1001\n", 20) = 20 <0.000278>
+21249 19:41:58.656043 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21712 <0.000044>
+21249 19:41:58.656141 accept(3,  <unfinished ...>
+21712 19:41:58.666910 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000011>
+21712 19:41:58.666999 write(1, "new client_fd: 11\n", 18) = 18 <0.000076>
+21712 19:41:58.667114 read(11, "app 1001 ON", 1024) = 11 <0.000018>
+21712 19:41:58.667166 write(1, "read_size:11\n", 13) = 13 <0.000078>
+21712 19:41:58.667315 write(1, "request from cgi:app 1001 ON\n", 29) = 29 <0.000052>
+21712 19:41:58.667405 write(1, "source:app\n", 11) = 11 <0.000050>
+21712 19:41:58.667488 write(1, "directive:ON\n", 13) = 13 <0.000050>
+21712 19:41:58.667569 write(1, "id:1001\n", 8) = 8 <0.000050>
+21712 19:41:58.667658 write(11, "tcp have received app", 21) = 21 <0.000576>
+21712 19:41:58.671714 close(11)         = 0 <0.000101>
+21712 19:41:58.671914 sendto(18, "ON\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 256, 0, NULL, 0) = 256 <0.000257>
+21712 19:41:58.672508 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000045>
+21712 19:41:58.672589 _exit(0)          = ?
+21712 19:41:58.672676 +++ exited with 0 +++
+21249 19:42:06.128602 <... accept resumed> {sa_family=AF_INET, sin_port=htons(43214), sin_addr=inet_addr("192.168.43.198")}, [16]) = 19 <7.472430>
+21249 19:42:06.129010 write(1, "get a connect.\n", 15) = 15 <0.000069>
+21249 19:42:06.129229 write(1, "client_fd: 19\n", 14) = 14 <0.000045>
+21249 19:42:06.129396 write(1, "mcufd:18 mcuid:1001\n", 20) = 20 <0.000052>
+21249 19:42:06.129646 clone(child_stack=0x7f78dab81fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f78dab829d0, tls=0x7f78dab82700, child_tidptr=0x7f78dab829d0) = 21719 <0.000107>
+21249 19:42:06.129884 accept(3,  <unfinished ...>
+21719 19:42:06.130517 set_robust_list(0x7f78dab829e0, 24) = 0 <0.000038>
+21719 19:42:06.130683 write(1, "new client_fd: 19\n", 18) = 18 <0.000372>
+21719 19:42:06.131198 read(19, "mcu 1001 open", 1024) = 13 <0.000054>
+21719 19:42:06.131382 write(1, "read_size:13\n", 13) = 13 <0.000242>
+21719 19:42:06.132046 write(1, "request from cgi:mcu 1001 open\n", 31) = 31 <0.000226>
+21719 19:42:06.132523 write(1, "source:mcu\n", 11) = 11 <0.000240>
+21719 19:42:06.133031 write(1, "directive:open\n", 15) = 15 <0.000227>
+21719 19:42:06.133545 write(1, "id:1001\n", 8) = 8 <0.000227>
+21719 19:42:06.134025 madvise(0x7f78da382000, 8368128, MADV_DONTNEED) = 0 <0.000056>
+21719 19:42:06.134212 _exit(0)          = ?
+21719 19:42:06.134357 +++ exited with 0 +++
+21249 19:53:05.209607 <... accept resumed> 0x7ffe3e2d5230, [16]) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <659.079550>
+21249 19:53:05.210988 --- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL, si_value={int=1791649480, ptr=0x7fa66aca66c8}} ---
+21249 19:53:05.221356 +++ killed by SIGINT +++

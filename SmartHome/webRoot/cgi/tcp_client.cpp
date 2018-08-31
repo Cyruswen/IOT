@@ -10,7 +10,7 @@
 #include <string>
 using namespace std;
 
-#define SERVER_IP "192.168.1.110"
+#define SERVER_IP "192.168.43.24"
 #define SERVER_PORT 9999
 #define BUF_SIZE 1024
 
