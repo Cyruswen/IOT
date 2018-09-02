@@ -179,7 +179,7 @@ static void* CreateWorker(void* ptr)
             printf("there is no such id\n");
             return NULL;
         }
-        send(mcu_fd, directive, sizeof(directive), 0);
+        send(mcu_fd, directive, 3, 0);
         //read(mcu_fd, buf, sizeof(buf));
         //printf("buf:%s\n", buf);
         //更新维护表中mcu的状态
