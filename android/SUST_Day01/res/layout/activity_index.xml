@@ -3,47 +3,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-         >
-        <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="266dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:src="@drawable/qq" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="100dp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="IO0"
-            />
-        <Switch 
+            android:src="@drawable/button_login_bg" />
+
+        <Switch
             android:id="@+id/sc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="ON"
-            android:textOff="OFF"
             android:checked="false"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-         >
-        <TextView 
+            android:textOff="OFF"
+            android:textOn="ON" />
+
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="IO0"
-            />
-        <Button 
-            android:id="@+id/btn_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ADD"
-            />
-        <Button 
-            android:id="@+id/btn_sub"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SUB"
-            />
+            android:layout_height="30dp"
+            android:text="开\关" />
     </LinearLayout>
 
 </LinearLayout>

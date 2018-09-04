@@ -52,9 +52,10 @@ public class MainActivity extends Activity {
 	}
 
 	protected void postData(String account, String password) {
-		RequestParams params=new RequestParams("http://192.168.0.137:8080/SUST/login");
+		RequestParams params=new RequestParams("http://101.200.63.71:8080/cgi/mysql/Login");
 		params.addBodyParameter("account", account);
 		params.addBodyParameter("password", password);
+		final String res = "";
 		
 		x.http().post(params, new CommonCallback<String>() {
 
@@ -75,9 +76,15 @@ public class MainActivity extends Activity {
 
 			@Override//200
 			public void onSuccess(String result) {
-				Toast.makeText(MainActivity.this, result, 0).show();
+				String res = result;
+				if(res.equals("yes")) {
+				Toast.makeText(MainActivity.this, "WELCOME!!!", 0).show();
 				startActivity(new Intent(MainActivity.this,IndexActivity.class));
 				MainActivity.this.finish();
+				}
+				else {
+					Toast.makeText(MainActivity.this, "’À∫≈ªÚ√‹¬Î¥ÌŒÛ£°£°£°", Toast.LENGTH_SHORT).show();
+				}
 			}
 		});
 	}

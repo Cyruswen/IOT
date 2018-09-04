@@ -6,7 +6,6 @@ import org.xutils.common.Callback.CommonCallback;
 import org.xutils.http.HttpMethod;
 import org.xutils.http.RequestParams;
 import org.xutils.view.annotation.ViewInject;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,10 +20,6 @@ import android.widget.Toast;
 public class IndexActivity extends Activity{
 	@ViewInject(R.id.sc)
 	Switch sc;
-	@ViewInject(R.id.btn_add)
-	Button btn_add;
-	@ViewInject(R.id.btn_sub)
-	Button btn_sub;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,31 +31,19 @@ public class IndexActivity extends Activity{
 			public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
 				String pin="";
 				if(isChecked){//IO0ÁÁ
-					pin="ON1";
+					pin="ON";
 				}else{//IO0Ãð
-					pin="OFF1";
+					pin="OFF";
 				}
 				postData(pin);
 			}
 		});
-		btn_add.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				postData("ADD");
-			}
-		});
-		btn_sub.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				postData("DEL");
-			}
-		});
 	}
 	protected void postData(String pin) {
-		RequestParams params = new RequestParams("http://192.168.0.172");
-		params.addParameter("pin",pin);
+		RequestParams params = new RequestParams("http://101.200.63.71:8080/cgi/tcp_client/tcp_client");
+		
+		params.addParameter("app",pin);
+		params.setConnectTimeout(60000);
 		x.http().request(HttpMethod.GET, params, new Callback.CommonCallback<String>() {
 		    @Override
 		    public void onSuccess(String result) {
