@@ -25,12 +25,10 @@ public class Util {
             conn.setInstanceFollowRedirects(true);
             conn.setRequestProperty("Connection", "Keep-Alive");
             conn.setRequestProperty("Charset", "UTF-8");
-            // 设置文件类型:
             conn.setRequestProperty("Content-Type", "application/json");
             conn.setRequestProperty("Accept", "application/json");
-            // 往服务器里面发送数据
             if (Json != null) {     
-            	OutputStreamWriter out = new OutputStreamWriter(conn.getOutputStream(), "UTF-8"); // utf-8编码
+            	OutputStreamWriter out = new OutputStreamWriter(conn.getOutputStream(), "UTF-8"); // utf-8锟斤拷锟斤拷
                 out.append(Json);
                 out.flush();
                 out.close();
