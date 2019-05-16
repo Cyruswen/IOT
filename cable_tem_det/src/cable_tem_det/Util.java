@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 public class Util {
@@ -86,5 +87,39 @@ public class Util {
 	 {
 		 JSONObject object = JSONObject.fromObject(map);
 		 return object.toString();
+	 }
+	 
+	 //待测试
+	 public static String[] getResult(String jsonData) {
+	        String[] result = {};
+	        try{
+	            JSONObject jsonObject = JSONObject.fromObject(jsonData);
+	            if(jsonObject != null) {
+	                JSONObject bizData = jsonObject.getJSONObject("bizData");
+	                if(bizData != null) {
+	                    JSONArray resultTmp = bizData.getJSONArray("result");
+	                    result = new String[resultTmp.size()];
+	                    System.out.println("元素个数: "+resultTmp.size());
+	                    for(int j = 0;j < resultTmp.size();j++){
+	                        JSONObject resultTmpJSONObject = resultTmp.getJSONObject(j);
+	                        result[j] = resultTmpJSONObject.getString("did");
+	                    }
+	                }
+	            }
+	        }
+	        catch(Exception e) {
+	            e.printStackTrace();
+	        }
+	        System.out.println("响应数据处理结果:");
+	        printArray(result);
+	        return result;
+	    }
+	 
+	 public static void printArray(String[] arr)
+	 {
+			for (int i = 0; i < arr.length; i++) {
+				System.out.print( arr[i] + " ");
+			}
+			System.out.println();
 	 }
 }

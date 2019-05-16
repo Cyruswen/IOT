@@ -28,6 +28,8 @@ public class main {
 //		change.showChangePhone();
 //		ChangePassword changepass = new ChangePassword();
 //		changepass.showChangePass();
+//		DeviceController device = new DeviceController();
+//		device.showDevice();
 	}
 
 }

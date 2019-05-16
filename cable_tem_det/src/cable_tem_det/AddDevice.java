@@ -16,23 +16,24 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class ChangePassword implements ActionListener {
+public class AddDevice implements ActionListener{
+
 
 	
 	private JFrame frame = new JFrame("电力电缆温度监测系统");
 	private Container c = frame.getContentPane();
 	private JLabel mes = new JLabel();
-	private JLabel passLable = new JLabel("新的密码:");
-	private JLabel passLable2 = new JLabel("再输一遍:");
-	private JPasswordField pass = new JPasswordField();
-	private JPasswordField pass2 = new JPasswordField();
+	private JLabel didLable = new JLabel("设备号:");
+	private JLabel verifyLable = new JLabel("验证码:");
+	private JTextField did = new JTextField();
+	private JPasswordField verifyCode = new JPasswordField();
 	private JButton submit = new JButton("确定");
 	private JButton back = new JButton("返回");
 	
 	/**
 	 * 展示个人中心界面
 	 */
-	public void showChangePass()
+	public void showAddDevice()
 	{
 		_initFrame();
 		_actionListen();
@@ -65,29 +66,28 @@ public class ChangePassword implements ActionListener {
 	
 	private void _actionSubmit()
 	{
-		String password = pass.getText();
-		String password2 = pass2.getText();
-		if (password.isEmpty() || password2.isEmpty()) {
-			mes.setText("请输入密码!");
-		} else if(!password.equals(password2)) {
-			mes.setText("两次输入密码不一致!");
+		String deviceId = did.getText();
+		String verify = verifyCode.getText();
+		if (deviceId.isEmpty() || verify.isEmpty()) {
+			mes.setText("请填写信息!!");
 		} else {
-			String reason = _talkWithService(password);
+			String reason = _talkWithService(deviceId, verify);
 			if (reason == null) {
-				mes.setText("更改成功");
+				mes.setText("添加设备成功!");
 			} else {
 				mes.setText(reason);
 			}
 		}
 	}
 	
-	private String _talkWithService(String password) {
+	private String _talkWithService(String did, String verifyCode) {
 		Map request = new HashMap<String, String>();
 		request.put("uid", Enum.uid);
-		request.put("password", password);
+		request.put("did", did);
+		request.put("verifyCode", verifyCode);
 		String jsonRequest = Util.json_encode(request);
 		System.out.println("请求数据:" + jsonRequest);
-		String response = Util.sendJsonPost(jsonRequest, Enum.CHANGE_PASS);
+		String response = Util.sendJsonPost(jsonRequest, Enum.ADD_DEVICE);
 		System.out.println("响应数据:" + response);
 		String[] data = {"code", "reason"};
 		Map responseMap = new HashMap<String, String>();
@@ -106,8 +106,8 @@ public class ChangePassword implements ActionListener {
 	 */
 	private void _actionBack()
 	{
-		ChangeInfo change = new ChangeInfo();
-		change.showChangeInfo();
+		Home home = new Home();
+		home.showHome();
 		frame.dispose();
 	}
 	
@@ -129,16 +129,14 @@ public class ChangePassword implements ActionListener {
 		JPanel centerPanel = new JPanel();
 		centerPanel.setBackground(Color.white);
 		centerPanel.setLayout(null);
-		//标签1
-		passLable.setFont(new java.awt.Font("楷体", 1, 20));
-		passLable.setBounds(75, 62, 100, 20);
-		//标签2
-		passLable2.setFont(new java.awt.Font("楷体", 1, 20));
-		passLable2.setBounds(75, 100, 100, 20);
-		//密码框1
-		pass.setBounds(170,60,140,27);
-		//密码框2
-		pass2.setBounds(170, 98, 140, 27);
+		
+		didLable.setFont(new java.awt.Font("楷体", 1, 20));
+		didLable.setBounds(75, 62, 100, 20);
+		verifyLable.setFont(new java.awt.Font("楷体", 1, 20));
+		verifyLable.setBounds(75, 100, 100, 20);
+		did.setBounds(170,60,140,27);
+		verifyCode.setBounds(170, 98, 140, 27);
+		
 		//确定
 		submit.setBounds(40, 255, 60, 25);
 		submit.setBorderPainted(false); 
@@ -153,10 +151,10 @@ public class ChangePassword implements ActionListener {
 		
 		centerPanel.add(submit);
 		centerPanel.add(back);
-		centerPanel.add(passLable);
-		centerPanel.add(passLable2);
-		centerPanel.add(pass);
-		centerPanel.add(pass2);
+		centerPanel.add(didLable);
+		centerPanel.add(verifyLable);
+		centerPanel.add(did);
+		centerPanel.add(verifyCode);
 		c.add(centerPanel, "Center");
 		
 		//底部表单
@@ -170,4 +168,5 @@ public class ChangePassword implements ActionListener {
 		frame.setResizable(false);
 		frame.setVisible(true);
 	}
+
 }

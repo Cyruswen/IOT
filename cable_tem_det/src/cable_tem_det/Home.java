@@ -6,6 +6,8 @@ import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -41,6 +43,7 @@ public class Home implements ActionListener {
 		String action = e.getActionCommand();
 		switch(action) {
 		case "设备管理":
+			_actionDeviceManage();
 			break;
 		case "数据查询":
 			break;
@@ -53,6 +56,26 @@ public class Home implements ActionListener {
 			break;
 		}
 		
+	}
+	
+	private void _actionDeviceManage()
+	{
+		_talkWithService();
+	}
+	
+	private void _talkWithService()
+	{
+		Map requestMap = new HashMap<String, String>();
+		requestMap.put("uid", Enum.uid);
+		String request = Util.json_encode(requestMap);
+		System.out.println("请求数据: " + request);
+		String response = Util.sendJsonPost(request, Enum.GET_DEVICE);
+		System.out.println("响应数据: " + response);
+		String[] result = Util.getResult(response);
+		Enum.temperatureData = result;		
+		DeviceController device = new DeviceController();
+		device.showDevice();
+		frame.dispose();
 	}
 	
 	private void _initFrame()
