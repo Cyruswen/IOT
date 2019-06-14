@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
 				String account=et_account.getText().toString();
 				String password=et_password.getText().toString();
 				if(account.equals("")||password.equals("")){
-					Toast.makeText(MainActivity.this, "用户名和密码不能为空！", Toast.LENGTH_SHORT).show();
+					Toast.makeText(".this, "用户名和密码不能为空！", Toast.LENGTH_SHORT).show();
 				}else{
 					//UI线程 MainActivity所在线程 主线程
 					//主要负责 界面的显示 和 用户行为的接收
