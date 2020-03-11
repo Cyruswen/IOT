@@ -12,6 +12,6 @@ C语言, socket编程, MySQL, HTTP协议, TCP协议,多线程, html, Android, No
 
 3.利用socket套接字编程实现可以与NodeMcu进行长连接的多线程TCP服务器
 - 利用顺序表对来自NodeMcu连接进行维护(设备id以及连接套接字)
-- 通过HTTP发来的设备id在顺序表查找到对应的连接套接字，并将命令转发给NodeMcu.
+- 通过HTTP发来的设备id在顺序表查找到对应的连接套接字，将命令转发给NodeMcu.
 
 4.NodeMcu解析命令控制I/O口输出，通过继电器控制插板开关。
